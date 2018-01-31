@@ -1,0 +1,191 @@
+.hongbao {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    background:#FFC851;
+}
+.festival-options{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width:100%;
+  height:90rpx;
+  background:#fff;
+  z-index:3001;
+}
+.festival-options .options-btn{
+  position:relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.festival-options .options-btn text{
+  font-size:28rpx;
+  color: #2b2b2b;
+}
+.festival-options .options-btn .up-arrow{
+  position:absolute;
+  left:38%;
+  bottom:-46rpx;
+  width:25rpx;
+  height:25rpx;
+  background:#fff;
+  border-top:1rpx solid #dcdcdc;
+  border-left:1rpx solid #dcdcdc;
+  transform:rotate(45deg) translateX(-50%);
+  z-index:2000;
+}
+
+.festival-options .options-btn image{
+  width:27rpx;
+  height:28rpx;
+  margin-left:20rpx;
+}
+/*  节气列表  */
+.festival-name-list-box{
+  position:absolute;
+  top:90rpx;
+  left:0;
+  width:100%;
+  height:0;
+  background:#fff;
+  z-index:3001;
+  border-top:1rpx solid #ededed; 
+}
+
+/*具体选项  */
+.festival-name-list-child{
+  margin:0 auto;
+  display: flex;
+  align-items: center;
+  width:690rpx;
+  height:80rpx;
+  background:#fff;
+  font-size:30rpx;
+  color: #031722;
+  border-bottom: 1rpx solid #ededed;
+}
+.festival-name-list-child text{
+  margin-left:30rpx;
+}
+
+
+/*  使用按钮  */
+.use-btn{
+  position:fixed;
+  left:50%;
+  bottom:54rpx;
+  transform:translateX(-50%);
+  width:400rpx;
+  height:88rpx;
+  text-align: center;
+  line-height:88rpx;
+  font-size:36rpx;
+  color:#fff;
+  background:#ee4126;
+  border-radius:6rpx;
+  z-index:3000;
+}
+/*  swiper  */
+.swiper{
+  position:relative;
+  width:100%;
+  height:737rpx;
+  margin-top:80rpx;
+}
+.swiper-item{
+  display:flex;
+  justify-content:center;
+  width:500rpx;
+  height:737rpx;
+}
+.defined{
+  position:relative;
+  width:500rpx;
+  height:737rpx;
+}
+.defined .defined-word{
+  position:absolute;
+  bottom:230rpx;
+  left:50%;
+  transform:translateX(-50%);
+  font-size:38rpx;
+}
+.swiper-item image{
+  width:500rpx;
+  height:737rpx;
+}
+/*  头像和祝福语  */
+.blessing-headimg{
+  position:absolute;
+  bottom:45rpx;
+  left:50%;
+  transform:translate(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width:420rpx;
+  height:220rpx;
+  background:#fff;
+  border-radius:6rpx;
+  opacity: 0.9;
+}
+.blessing-headimg .headimg{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width:100%;
+  margin-top:30rpx;
+}
+.blessing-headimg .headimg image{
+  width:60rpx;
+  height:60rpx;
+  margin-left:30rpx;
+  border-radius:100%;
+}
+.blessing-headimg .headimg text{
+  margin-left:20rpx;
+  font-weight:bold;
+  font-size:30rpx;
+}
+.blessing-headimg .blessing{
+  margin-top:30rpx;
+  font-size:30rpx;
+  color:#282828;
+}
+/*  蒙版  */
+.mark{
+  position:fixed;
+  left:0;
+  top:0;
+  width:100%;
+  height:100%;
+  background:#000;
+  opacity: 0.5;
+  z-index:3000;
+}
+/*  swiper的下滑块样式  */
+.swiper .wx-swiper-dots.wx-swiper-dots-horizontal {
+  margin-bottom: -10rpx;
+}
+
+.swiper .wx-swiper-dot {
+  width: 30rpx;
+  display: inline-flex;
+  height: 6rpx;
+  margin-left: 5rpx;
+  justify-content: space-between;
+}
+
+.swiper .wx-swiper-dot::before {
+  content: '';
+  flex-grow: 1;
+  background-color: #dedede;
+  border-radius: 3rpx;
+}
+
+.swiper .wx-swiper-dot-active::before {
+  background-color: #FFC851;
+}
+

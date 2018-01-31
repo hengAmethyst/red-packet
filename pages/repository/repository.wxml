@@ -1,0 +1,50 @@
+<import src="/common/template/wetoast/wetoast.wxml" />
+<template is="wetoast" data="{{...__wetoast__}}" />
+
+<import src='/common/template/empty/empty' />
+<import src="/common/head/head" />
+<template is="head" />
+
+
+
+
+<scroll-view class="noticeList" scroll-y bindscrolltoupper="scrolltoupper" bindscrolltolower="scrolltolower" upper-threshold="200" lower-threshold="200">
+  <!-- 小金库  -->
+  <view class="repository">
+    <!-- 余额 -->
+    <view class="repository-title">
+      <view class="left-title">余额</view>
+      <view class="left-money">￥{{remainAmount/100}}</view>
+      <image class='getCash-image' src='/img/icon_tixian.png' bindtap='goCash'></image>
+    </view>
+    <!--日期选择  -->
+    <view class="date-option">
+      <image class="left" src="/img/icon_left.png" bindtap="preDate" />
+      <picker class="date-picker" mode="date" value="{{nowChoosedDate}}" start="2015-09-01" end="{{todayDate}}" bindchange="bindDateChange">
+        {{nowChoosedDate}}
+      </picker>
+      <image class="right" src="/img/icon_right.png" bindtap="nextDate" />
+    </view>
+
+    <!-- 如果没有数据则显示空白页 -->
+    <block wx:if="{{dataArr.length == 0}}">
+      <template is="empty" />
+    </block>
+
+    <block wx:else>
+      <!-- 记录  -->
+      <view class="record">
+        <view class="record-item" wx:for="{{dataArr}}">
+          <text class="time">{{item.createTime}}</text>
+          <text class="type">{{item.tradeTypeStr}}</text>
+          <text class="money">{{item.tradeAmount/100}}元</text>
+        </view>
+      </view>
+
+      <!-- 尾部提示 -->
+      <view class="loadMoreTip">
+        <text>{{loadMoreTip}}</text>
+      </view>
+    </block>
+  </view>
+</scroll-view>

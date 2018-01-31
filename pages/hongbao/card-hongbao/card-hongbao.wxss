@@ -1,0 +1,81 @@
+.card-hongbao {
+    position: relative;
+    z-index: 1;
+    padding-top: 350rpx;
+    background-color: rgb(247, 247, 247);
+}
+
+.card-bg {
+    position: absolute;
+    width: 750rpx;
+    height: 950rpx;
+    left: 0;
+    top: 0;
+    z-index: -1;
+}
+
+.change-template {
+    margin: 0 auto 350rpx;
+    width: 270rpx;
+    height: 70rpx;
+    border-radius: 8rpx;
+    background-color: #fff;
+    text-align: center;
+    line-height: 70rpx;
+    color: #333839;
+    font-size: 28rpx;
+}
+
+.card-info {
+    margin: 0 auto 30rpx;
+    position: relative;
+    z-index: 1;
+    width: 640rpx;
+    height: 200rpx;
+    border-radius: 10rpx;
+    background-color: #fff;
+}
+
+.card-info .no-info {
+    height: 200rpx;
+    line-height: 200rpx;
+    text-align: center;
+    font-size: 28rpx;
+    color: #b9b9b9;
+}
+
+.card-info::after {
+    content: '';
+    position: absolute;
+    top: 88rpx;
+    right: 40rpx;
+    z-index: 10;
+    width: 17rpx;
+    height: 17rpx;
+    border: 1rpx solid #b9b9b9;
+    border-left: none;
+    border-bottom: none;
+    transform: rotate(45deg);
+}
+
+.wish {
+    margin: 0 auto 28rpx;
+    box-sizing: border-box;
+    padding: 0 20rpx;
+    width: 640rpx;
+    height: 90rpx;
+    border-radius: 10rpx;
+    background-color: #fff;
+    color: #b9b9b9;
+    font-size: 28rpx;
+}
+
+.submit-btn {
+    width: 750rpx;
+    height: 88rpx;
+    background-color: #dcdcdc;
+    font-size: 36rpx;
+    color: #fff;
+    text-align: center;
+    line-height: 88rpx;
+}

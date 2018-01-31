@@ -1,0 +1,52 @@
+/* common/userCenter/userCenterCell.wxss */
+
+.userCenterCell {
+  display: flex;
+  height: 100rpx;
+  align-items: center;
+  position: relative;
+  background-color: white;
+  border-bottom: solid 1rpx rgba(214, 214, 214, 0.4);
+}
+
+.title {
+  font-size: 30rpx;
+  color: #333839;
+  margin-left: 30rpx;
+}
+
+.subtitle{
+  margin-left: 30rpx;
+	font-size: 26rpx;
+	text-align: center;
+	color: #7c7c7c;
+}
+
+.description {
+  position: absolute;
+  width: 200rpx;
+  right: 75rpx;
+  top: 28rpx;
+  height: 44rpx;
+  font-size: 30rpx;
+  text-align: right;
+  color: #ee4126;
+}
+
+.redDot-view{
+  position: absolute;
+  right: 75rpx;
+  width: 12rpx;
+	height: 12rpx;
+	background-color: #da0000;
+  border-radius: 6rpx;
+  margin-left: 10rpx;
+}
+
+.right-image {
+  position: absolute;
+  right: 30rpx;
+  top: 32rpx;
+  width: 36rpx;
+  height: 36rpx;
+}

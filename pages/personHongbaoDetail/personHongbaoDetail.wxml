@@ -1,0 +1,43 @@
+<view class="card-hongbao">
+    <image src="{{itemStyle.templateUrl}}" class="card-bg" mode="aspectFill"></image>
+    <view class="card-info">
+        <!-- <view class="no-info">点击选择名片</view> -->
+        <image class="info-avatar" src="{{itemStyle.logo}}"></image>
+        <view class="info-content">
+            <view class="info-name">{{itemStyle.name}}</view>
+        </view>
+    </view>
+    <view class="wish">{{itemStyle.greeting}}</view>
+    <!-- <view class="submit-btn">确认</view> -->
+    <view class="user-list">
+        <block wx:for="{{userList}}" wx:key="index">
+            <view class="user-item">
+                <image src="{{item.photo}}" class="item-avatar"></image>
+                <view class="item-content">
+                    <view class="item-nickname">{{item.name}}</view>
+                    <view class="item-message">{{item.leaveWord}}</view>
+                </view>
+                <view class="item-amount">{{item.amount}}元</view>
+            </view>
+        </block>
+    </view>
+
+    <view class="footer-btn receive" wx:if="{{receive}}">
+        <view class="more" catchtap="handleMore">
+            <image class="icon" src="/img/icon_more.png"></image>
+            <text class="text">更多</text>
+        </view>
+        <button class="share" open-type="share">
+            <image class="icon" src="/img/icon_share.png"></image>
+            <text class="text">分享</text>
+        </button>
+        <view class="received">已领红包</view>
+    </view>
+    <view class="footer-btn send" wx:if="{{sent}}">
+        <view class="one-more-time" catchtap='handleAgain'>
+            <image class="icon" src="/img/icon_again.png"></image>
+            <text class="text">再发一个</text>
+        </view>
+        <view class="sent">发红包给好友</view>
+    </view>
+</view>

@@ -1,0 +1,23 @@
+<view class="box" bindtouchstart="touchstart" bindtouchmove="touchmove" bindtouchend="touchend">
+    <view animation="{{animation1}}" bindtap="scrollLeft">
+        <image src="{{clubs[0]}}" class="img" style="width:{{img_width_one}}rpx" mode='aspectFill' />
+    </view>
+    <view animation="{{animation2}}" bindtap="scrollLeft">
+        <image src="{{clubs[1]}}" class="img2" />
+    </view>
+    <view animation="{{animation3}}">
+        <image src="{{clubs[2]}}" class="img3" style="width:{{img_width_three}}rpx" mode='aspectFill' />
+    </view>
+</view>
+<!-- 
+<swiper>
+  <swiper-item style="width:80%;">
+    <image src="{{clubs[0]}}" class="img1" mode='aspectFill' />
+  </swiper-item>
+  <swiper-item style="width:80%;">
+    <image src="{{clubs[1]}}" class="img" style="width:80%" mode='aspectFill' />
+  </swiper-item>
+  <swiper-item>
+    <image src="{{clubs[2]}}" class="img" style="width:80%" mode='aspectFill' />
+  </swiper-item>
+</swiper> -->

@@ -1,0 +1,114 @@
+<!--common/userCenter/removeRedEnvelope/removeRedEnvelope.wxml-->
+
+
+<!-- 已领取活动红包 -->
+<block wx:if="{{type == 0}}">
+  <view class='removeRedEnvelope-box'>
+    <!-- 蒙版 -->
+    <view class='background-view'></view>
+
+    <!-- 红包 -->
+    <view class='redEnvelope-box'>
+      <!-- hongbao_big.jpg    icon_open_style_2.png-->
+      <image src='/img/icon_open_style_2.png'></image>
+      <text class='title'>您已经领过啦！\n不要贪心喔！</text>
+      <text class="info">橙子发的红包橙子发的红包橙子发的红包橙子发的红包橙子发的红包橙子发的红包橙子发的红包橙子发的红包橙子发的红包橙子发的红包橙子发的红包橙子发的红包</text>
+      <text class='remaining'>还剩98份</text>
+    </view>
+    <image class='cloose-button' src='/img/icon_cloose_btn.png' bindtap='clooseBtnClick'></image>
+  </view>
+</block>
+
+
+
+<!-- 活动红包已发完 -->
+<block wx:if="{{type == 1}}">
+  <view class='removeRedEnvelope-box'>
+    <!-- 蒙版 -->
+    <view class='background-view'></view>
+
+    <!-- 红包 -->
+    <view class='redEnvelope-box'>
+      <!-- hongbao_big.jpg    icon_open_style_2.png-->
+      <image src='/img/icon_open_style_2.png'></image>
+      <text class='title'>活动红包\n已经派发完啦！</text>
+      <text class="info">橙子发的红包橙子发的红包橙子发的红包橙子发的红包橙子发的红包橙子发的红包橙子发的红包橙子发的红包橙子发的红包橙子发的红包橙子发的红包橙子发的红包</text>
+      <text class='remaining'>还剩98份</text>
+    </view>
+    <image class='cloose-button' src='/img/icon_cloose_btn.png' bindtap='clooseBtnClick'></image>
+  </view>
+</block>
+
+
+
+<!-- 领取活动红包成功 -->
+<block wx:if="{{type == 2}}">
+  <view class='removeRedEnvelope-box'>
+    <!-- 蒙版 -->
+    <view class='background-view'></view>
+
+    <!-- 红包 -->
+    <view class='redEnvelope-box'>
+      <!-- hongbao_big.jpg    icon_open_style_2.png-->
+      <image src='/img/icon_open_style_1.png'></image>
+      <text class='title-success'>恭喜您获得</text>
+      <view class='price-box'>
+        <text class="price-success">1.21</text>
+        <text class='item-success'>元</text>
+      </view>
+      <text class="info-success">人人都有红包拿\n活动红包</text>
+      <text class='remaining'>还剩98份</text>
+    </view>
+    <image class='cloose-button' src='/img/icon_cloose_btn.png' bindtap='clooseBtnClick'></image>
+  </view>
+</block>
+
+
+<!-- 红包未拆开状态 -->
+<block wx:if="{{type == 3}}">
+  <view class='removeRedEnvelope-box'>
+    <!-- 蒙版 -->
+    <view class='background-view'></view>
+
+    <!-- 红包 -->
+    <view class='redEnvelope-not-removed-box'>
+      <!-- hongbao_big.jpg    icon_open_style_2.png-->
+      <image src='/img/icon_open_style_3.png'></image>
+      <text class="info-not-open">钱沐恩发的红包钱沐</text>
+
+    </view>
+    <image class='cloose-button' src='/img/icon_cloose_btn.png' bindtap='clooseBtnClick'></image>
+  </view>
+</block>
+
+
+
+
+
+<!-- 个人红包领取成功 -->
+<block wx:if="{{type == 4}}">
+  <view class='removeRedEnvelope-box'>
+    <!-- 蒙版 -->
+    <view class='background-view'></view>
+
+    <!-- 红包 -->
+    <view class='redEnvelope-box'>
+      <!-- hongbao_big.jpg    icon_open_style_2.png-->
+      <image src='/img/icon_open_style_1.png'></image>
+      <text class='title-success'>恭喜您获得</text>
+      <view class='price-box'>
+        <text class="price-success">1.21</text>
+        <text class='item-success'>元</text>
+      </view>
+      <text class="info-success">钱沐恩发的红包钱沐恩发的红包钱沐恩发的红包钱沐恩发的红包</text>
+      <view class='share-box' bindtap='shareBtnClick'>
+        <view class='share-image-view'>
+          <image  src='/img/icon_red_share.png'></image> 
+        </view>
+        <text >快让朋友来领</text>
+      </view>
+      <text class='remaining-open'>还剩98份</text>
+    </view>
+    <image class='cloose-button' src='/img/icon_cloose_btn.png' bindtap='clooseBtnClick'></image>
+  </view>
+</block>

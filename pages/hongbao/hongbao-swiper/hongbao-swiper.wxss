@@ -1,0 +1,48 @@
+/** 发红包 **/
+
+.box {
+    padding-top:80rpx;
+    z-index: 0;
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.img {
+    margin-right: 40rpx;
+    height: 546rpx;
+}
+
+.img2 {
+    height: 670rpx;
+    width: 540rpx;
+}
+
+.img3 {
+    margin-left: 40rpx;
+    height: 546rpx;
+}
+
+.box .club:nth-child(1) {
+    transform: scale(1, 1)translateX(0rpx);
+    opacity: 0.2;
+    z-index: 10;
+}
+
+.box .club:nth-child(2) {
+    transform: scale(1, 1);
+    opacity: 1;
+    z-index: 100;
+}
+
+.box .club:nth-child(3) {
+    transform: scale(1, 1)translateX(0rpx);
+    opacity: 0.2;
+    z-index: 10;
+}
+
+
+.img1{
+  transform: scale(1,1)translateX(0rpx);
+}

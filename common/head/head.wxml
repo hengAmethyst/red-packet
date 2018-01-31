@@ -1,0 +1,4 @@
+
+<template name="head">
+  <view class='head-line-view'></view>
+</template>

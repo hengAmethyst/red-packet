@@ -1,0 +1,70 @@
+
+<import src="/common/head/head" />
+<template is="head" />
+
+<view class="banner">
+    <view class="title">绑定新乐汇账号</view>
+</view>
+
+<form bindsubmit="handleFormSubmit">
+    <view class="form-item {{isPhoneFc ? 'active' : ''}}">
+        <view class="label">{{(isPhoneFc || phone) ? '手机号' : ''}}</view>
+        <view class="item-value">
+            <input
+                name="phone"
+                placeholder="{{isPhoneFc ? '' : '手机号'}}"
+                focus="{{fcPhone}}"
+                data-name="phone"
+                bindfocus="handleInputFocus"
+                bindblur="handleInputBlur"
+                bindinput="handleInputInput"></input>
+        </view>
+    </view>
+    <view class="form-item {{isVerificationCodeFc ? 'active' : ''}}">
+        <view class="label">{{(isVerificationCodeFc || verificationCode) ? '验证码' : ''}}</view>
+        <view class="item-value">
+            <input
+                name="verificationCode"
+                placeholder="{{isVerificationCodeFc ? '' : '验证码'}}"
+                focus="{{fcVerificationCode}}"
+                data-name="verificationCode"
+                bindfocus="handleInputFocus"
+                bindblur="handleInputBlur"
+                bindinput="handleInputInput"></input>
+            <view class="extra" bindtap="handleGetVerificationCode">{{txtGetVerificationCode}}</view>
+        </view>
+    </view>
+    <view class="form-item {{isPasswordFc ? 'active' : ''}}">
+        <view class="label">{{(isPasswordFc || password) ? '密码' : ''}}</view>
+        <view class="item-value">
+            <input
+                name="password"
+                placeholder="{{isPasswordFc ? '' : '密码'}}"
+                focus="{{fcPassword}}"
+                password="{{hiddenPassword}}"
+                data-name="password"
+                bindfocus="handleInputFocus"
+                bindblur="handleInputBlur"
+                bindinput="handleInputInput"></input>
+            <view class="extra" bindtap="handleToggleDisplayPassword">{{txtToggleDisplayPassowrd}}</view>
+        </view>
+    </view>
+    <view class="form-item {{isInvitationCodeFc ? 'active' : ''}}">
+        <view class="label">{{(isInvitationCodeFc || invitationCode) ? '邀请码' : ''}}</view>
+        <view class="item-value">
+            <input
+                name="invitationCode"
+                placeholder="{{isInvitationCodeFc ? '' : '邀请码'}}"
+                focus="{{fcInvitationCode}}"
+                data-name="invitationCode"
+                bindfocus="handleInputFocus"
+                bindblur="handleInputBlur"
+                bindinput="handleInputInput"></input>
+            <view class="extra">如无请留空</view>
+        </view>
+    </view>
+    <button
+        disabled="{{!phone || !verificationCode || !password}}"
+        class="btn-register"
+        form-type="submit">注册</button>
+</form>

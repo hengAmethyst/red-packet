@@ -1,0 +1,31 @@
+<view class="person-info">
+  <!--  头像  -->
+  <view class="head-img">
+    <view class="head-img-name">
+      头像
+    </view>
+    <view class="head-img-img" bindtap="changeHeadImg">
+      <image class="content" src="{{headImg}}"></image>
+      <image class="arrow" src="/img/icon_rightArrow.png"></image>
+    </view>
+  </view>
+  <!--  姓名/昵称  -->
+  <view class="nickname">
+    <view class="name">姓名/昵称</view>
+    <view class="content">
+      <input type='text' value="{{nickName}}" bindinput='inputSome' data-type="{{0}}" maxlength='10'></input>
+    </view>
+  </view>
+  <!--  祝福语  -->
+  <view class="blessing">
+    <view class="blessing-name">祝福语</view>  
+    <input placeholder='输入祝福语' value="{{blessing}}" bindinput='inputSome' data-type="{{1}}" maxlength='20'></input> 
+    <view class="blessing-length">
+      <text>{{blessing.length}}/20</text>
+    </view>
+  </view>
+  <!--  确认按钮  -->
+  <view class="submit-btn" bindtap="goback">
+    确认
+  </view>
+</view>

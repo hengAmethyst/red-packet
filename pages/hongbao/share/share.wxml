@@ -1,0 +1,69 @@
+<view class="share-hongbao">
+  <view class="share-name">
+    <text>绑定汇客通</text>
+  </view>
+  <!-- 选项  -->
+  <view class="share-options">
+    <text>微官网进阶版: 模板一</text>
+  </view>
+  <!-- 文字提示  -->
+  <view class="share-tip">
+    开启分享红包后,如果用户进入你的微单页或微官网并成功进行了分享,则领取一个红包奖励
+  </view>
+  <view class="share-tip-backmoney">
+    <text>
+      红包在七天内未被领取完会退回到账户
+    </text> 
+  </view>
+  <!--  总奖金  -->
+  <view class="share-all-money">
+    <view class="name">总奖金</view>
+    <view class="money">
+      <text class="money-num">0.00</text>
+      <text class="money-unit">元</text>
+    </view>
+  </view>
+  <!--  总份数  -->
+  <view class="share-all-count">
+    <view class="name">总个数</view>
+    <view class="count">
+      <text class="count-num">0</text>
+      <text class="count-unit">个</text>
+    </view>
+  </view>
+  <!--红包金额  -->
+  <view class="share-all-permoney">
+    <view class="name">红包金额</view>
+    <view class="permoney">
+      <text class="permoney-num">均分</text>
+      <image src="/img/icon_rightArrow.png"></image>
+    </view>
+  </view>
+  <!--  能否被搜索到开关  -->
+  <view class="able-search">
+    <text>可以被找红包功能搜索到</text>
+    <switch checked color="#ee4126"/>
+  </view>
+  <!--地理位置  -->
+  <view class="location">
+    <view class="name">地理位置</view>
+    <view class="options">
+      <text>选定地理位置</text>
+      <image src="/img/icon_rightArrow.png"></image>
+    </view>
+  </view>
+  <!--  范围  -->
+  <view class="scope" bindtap="chooseScope">
+    <view class="name">范围</view>
+    <view class="options">
+      <text>附近3km</text>
+      <image src="/img/icon_rightArrow.png"></image>
+    </view>
+  </view>
+  <!--  发红包按钮  -->
+  <view class="finish-send-btn">
+    发红包
+  </view>
+  
+
+</view>

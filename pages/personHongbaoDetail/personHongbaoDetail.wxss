@@ -1,0 +1,217 @@
+.card-hongbao {
+    position: relative;
+    z-index: 1;
+    padding-top: 770rpx;
+    padding-bottom: 155rpx;
+    background-color: rgb(247, 247, 247);
+}
+
+.card-bg {
+    position: absolute;
+    width: 750rpx;
+    height: 950rpx;
+    left: 0;
+    top: 0;
+    z-index: -1;
+}
+
+.card-info {
+    display: flex;
+    box-sizing: border-box;
+    margin: 0 auto;
+    padding: 38rpx 40rpx;
+    position: relative;
+    z-index: 1;
+    width: 640rpx;
+    height: 200rpx;
+    border-radius: 10rpx;
+    background-color: rgba(255, 255, 255, 0.9);
+    /* backdrop-filter: blur(10px); */
+}
+
+.card-info .info-avatar {
+    margin-right: 20rpx;
+    width: 110rpx;
+    height: 110rpx;
+    border-radius: 50%;
+}
+
+.card-info .info-content {
+    flex: 1;
+}
+
+.card-info .no-info {
+    height: 200rpx;
+    line-height: 200rpx;
+    text-align: center;
+    font-size: 28rpx;
+    color: #b9b9b9;
+}
+
+.card-info::after {
+    content: '';
+    position: absolute;
+    top: 88rpx;
+    right: 40rpx;
+    z-index: 10;
+    width: 17rpx;
+    height: 17rpx;
+    border: 1rpx solid #b9b9b9;
+    border-left: none;
+    border-bottom: none;
+    transform: rotate(45deg);
+}
+
+.wish {
+    margin: 0 auto 30rpx;
+    padding: 40rpx 20rpx;
+    box-sizing: border-box;
+    width: 640rpx;
+    text-align: center;
+    line-height: 40rpx;
+    border-radius: 10rpx;
+    background-color: #fff;
+    color: #2b2b2b;
+    font-size: 28rpx;
+    box-shadow: inset 0 1px 0 0 #eee;
+}
+
+.user-list {
+    box-sizing: border-box;
+    width: 750rpx;
+    background-color: #fff;
+    padding: 0 45rpx;
+}
+
+.user-list .user-item {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    box-sizing: border-box;
+    padding: 24rpx 0;
+    width: 660rpx;
+    height: 158rpx;
+    border-bottom: 1rpx solid #d9d9d9;
+}
+
+.user-list .user-item .item-avatar {
+    margin-right: 20rpx;
+    width: 110rpx;
+    height: 110rpx;
+    border-radius: 50%;
+}
+
+.user-list .user-item .item-content {
+    flex: 1;
+}
+
+.user-item .item-content .item-nickname {
+    width: 100%;
+    height: 40rpx;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: 28rpx;
+    color: #333839;
+}
+
+.user-item .item-content .item-message {
+    width: 100%;
+    height: 33rpx;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: 24rpx;
+    color: #808080;
+}
+
+.user-item .item-amount {
+    height: 110rpx;
+    line-height: 110rpx;
+    width: 150rpx;
+    font-size: 30rpx;
+    font-weight: 600;
+    color: #ee4126;
+}
+
+.footer-btn {
+    display: flex;
+    position: fixed;
+    z-index: 50;
+    width: 750rpx;
+    height: 100rpx;
+    left: 0;
+    bottom: 0;
+    background: #fff;
+    text-align: center;
+}
+
+.footer-btn .icon {
+    display: block;
+    margin: 16rpx auto 0;
+    width: 36rpx;
+    height: 36rpx;
+}
+
+.footer-btn .text {
+    margin-top: 4rpx;
+    height: 28rpx;
+    line-height: 28rpx;
+    font-size: 20rpx;
+    color: #2b2b2b;
+}
+
+.receive .more {
+    border-top: 1rpx solid #ccc;
+    border-right: 1rpx solid #ccc;
+    flex: 1;
+    line-height: 1;
+}
+
+.receive .share {
+    flex: 1;
+    background-color: #fff;
+    border-top: 1rpx solid #ccc;
+    border-radius: 0;
+    padding: 0;
+    margin: 0;
+    line-height: 1;
+}
+
+.receive .share::after {
+    border: none;
+}
+
+.receive .received {
+    width: 400rpx;
+    background-color: #dcdcdc;
+    line-height: 100rpx;
+    font-size: 34rpx;
+    color: #fff;
+    text-align: center;
+}
+
+.send .one-more-time {
+    border-top: 1rpx solid #ccc;
+    flex: 1;
+    line-height: 1;
+}
+
+.send .sent {
+    width: 488rpx;
+    background-color: #ee4126;
+    line-height: 100rpx;
+    font-size: 34rpx;
+    color: #fff;
+    text-align: center;
+}
+
+.submit-btn {
+    width: 750rpx;
+    height: 88rpx;
+    background-color: #dcdcdc;
+    font-size: 36rpx;
+    color: #fff;
+    text-align: center;
+    line-height: 88rpx;
+}

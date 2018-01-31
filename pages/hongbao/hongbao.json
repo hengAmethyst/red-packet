@@ -1,0 +1,8 @@
+{
+    "usingComponents": {
+        "h-swiper": "./hongbao-swiper/hongbao-swiper"
+    },
+    "backgroundColor": "#f7f7f7",
+    "backgroundTextStyle": "dark",
+    "navigationBarTitleText": "一起抢红包"
+}

@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "红包兑换",
+  "usingComponents": {
+    "removeRedEnvelope": "/common/userCenter/removeRedEnvelope/removeRedEnvelope"
+  }
+}

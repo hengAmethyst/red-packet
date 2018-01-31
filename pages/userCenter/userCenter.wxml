@@ -1,0 +1,19 @@
+<!--pages/userCenter/userCenter.wxml-->
+<import src="/common/head/head" />
+<template is="head" />
+
+<view class='userCenter-box'>
+  <!-- 用户头像 绑定状态 -->
+  <view class='header-view'>
+    <image src='{{logo}}' class='header-image'></image>
+    <text>{{isRegist?name:'未绑定'}}</text>
+    <button wx:if="{{!isRegist}}" bindtap='bindBtnClick'>绑定新乐汇账号</button>
+  </view>
+
+  <!-- 选择项 -->
+  <view class='setting-view'>
+    <block wx:for="{{dataArr}}" wx:key="item">
+      <userCenterCell class="{{index == 0?'setting-view-tow':''}}" info="{{item}}" bind:userCenterCellClick="userCenterCellClick"></userCenterCell>
+    </block>
+  </view>
+</view>

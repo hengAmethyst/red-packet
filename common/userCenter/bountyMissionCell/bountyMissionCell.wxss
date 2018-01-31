@@ -1,0 +1,100 @@
+/* common/userCenter/userCenterCell/bountyMissionCell/bountyMissionCell.wxss */
+
+.bountyMissionCell-box {
+  height: 280rpx;
+  width: 100%;
+}
+
+.bountyMission-info {
+  position: absolute;
+  display: flex;
+  margin: 30rpx 30rpx 0rpx 30rpx;
+  height: 100%;
+}
+
+.bountyMission-info image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 280rpx;
+}
+
+.hb-item {
+  position: relative;
+  height: 280rpx;
+  box-sizing: border-box;
+  background-color: #fff;
+  box-shadow: inset 0 -1rpx 0 0 #d9d9d9;
+  margin-top: 30rpx;
+  margin-left: 30rpx;
+  margin-right: 30rpx;
+}
+
+.hb-item .hb-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 280rpx;
+}
+
+.hb-item .hb-content {
+  position: relative;
+  height: 220rpx;
+
+}
+
+
+.hb-item .hb-content .name {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 79rpx;
+  right: 30rpx;
+  font-size: 28rpx;
+  font-weight: 600;
+  text-align: right;
+  color: #ee4126;
+  background-color: white;
+  padding: 0rpx 20rpx;
+  height: 60rpx;
+  border-radius: 60rpx;
+}
+
+.hb-item .hb-content .price{
+  position: absolute;
+  width: 450rpx;
+  display: flex;
+  align-items: center;
+  top: 65rpx;
+  left: 60rpx;
+  font-size: 60rpx;
+  font-weight: 600;
+  color: white;
+}
+
+.hb-item .hb-content .distance {
+  position: absolute;
+  right: 30rpx;
+  bottom: 14rpx;
+  font-size: 24rpx;
+  text-align: right;
+  color: #fff;
+}
+
+.hb-item .hb-quantity {
+  position: relative;
+  height: 60rpx;
+  font-size: 24rpx;
+  color: #625118;
+  line-height: 60rpx;
+}
+
+.hb-item .hb-quantity .received {
+  position: absolute;
+  left: 30rpx;
+  text-align: left;
+  color: #625118;
+}

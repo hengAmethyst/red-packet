@@ -1,0 +1,56 @@
+{
+  "pages": [
+    "pages/findHongbao/findHongbao",
+    "pages/hongbao/hongbao",
+    "pages/repository/repository",
+    "pages/register/register",
+    "pages/repository/charge/charge",
+    "pages/repository/getCash/getCash",
+    "pages/hongbao/share/share",
+    "pages/hongbao/card-hongbao/card-hongbao",
+    "pages/userCenter/redEnvelopesCode/redEnvelopesCode",
+    "pages/userCenter/bountyMission/bountyMission",
+    "pages/userCenter/userCenter",
+    "pages/myHongbao/myHongbao",
+    "pages/personHongbaoDetail/personHongbaoDetail",
+    "pages/hongbao/faHongBao/faHongBao",
+    "pages/hongbao/faHongBao/personInfo/personInfo",
+    "pages/hongbao/faHongBao/advancedSet/advancedSet",
+    "pages/userCenter/suggestions/suggestions"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "selectedColor": "#ee4126",
+    "list": [
+      {
+        "pagePath": "pages/findHongbao/findHongbao",
+        "text": "抢红包",
+        "iconPath": "img/icon_snatch.png",
+        "selectedIconPath": "img/icon_snatch_active.png"
+      },
+      {
+        "pagePath": "pages/hongbao/hongbao",
+        "text": "发红包",
+        "iconPath": "img/icon_sending.png",
+        "selectedIconPath": "img/icon_sending_active.png"
+      },
+      {
+        "pagePath": "pages/myHongbao/myHongbao",
+        "text": "我的红包",
+        "iconPath": "img/icon_my_hb.png",
+        "selectedIconPath": "img/icon_my_hb_active.png"
+      },
+      {
+        "pagePath": "pages/userCenter/userCenter",
+        "text": "个人中心",
+        "iconPath": "img/icon_usercenter.png",
+        "selectedIconPath": "img/icon_usercenter_active.png"
+      }
+    ]
+  }
+}

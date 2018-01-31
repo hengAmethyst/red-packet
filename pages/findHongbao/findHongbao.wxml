@@ -1,0 +1,98 @@
+<view class="tab-content" wx:if="{{!mapVisible}}">
+    <view class="tab-item">
+        <view class="hb-list" wx:if="{{hbList.length > 0}}">
+            <block wx:for="{{hbList}}" wx:key="index">
+                <view class="hb-item" data-id="{{item.redbagId}}" bindtap="handleHbTap">
+                    <image class="hb-bg" src="/img/hongbao_style.jpg"></image>
+                    <view class="hb-content">
+                        <view class="share">{{item.redbagCategory}}</view>
+                        <view class="source">{{item.redbagType}}</view>
+                        <view class="name">{{item.redbagLongName}}</view>
+                        <view class="distance">{{item.distanceStr}}km</view>
+                    </view>
+                    <view class="hb-quantity">
+                        <view class="received">{{item.receiveCount}}/{{item.totalCount}}人已领取</view>
+                        <view class="expiration-time">{{item.expireTime}}</view>
+                    </view>
+                </view>
+            </block>
+        </view>
+        <view class="empty-hb empty-received-hb" wx:else>
+            <image class="bg" src="/img/pic_space.png"></image>
+            <view class="remark">当前没有优惠或红包</view>
+        </view>
+    </view>
+</view>
+
+<view class="map-switcher" hidden="{{mapVisible}}" bindtap="handleTogglehMap">
+    <image class="icon" src="/img/icon_map_mode.png"></image>
+    <view class="label">地图</view>
+</view>
+
+<view class="snatch-result" catchtouchmove="true" hidden="{{mapVisible || !snatchVisible}}">
+    <view class="shadow"></view>
+    <view wx:if="{{snatchInfo.status == 0}}" class="result-info" animation="{{snatchAnimation}}">
+        <image class="bg" src="/img/icon_open_style_1.png"></image>
+        <view class="amount-prefix">恭喜您获得</view>
+        <view class="amount-info">
+            <view class="amount">{{snatchInfo.amount}}</view>
+            <view class="amount-unit">元</view>
+        </view>
+        <view class="title">{{snatchInfo.title}}</view>
+        <view class="btn-share" data-id="{{snatchInfo.redbagId}}" bindtap="handleSnatchShare">
+            <image class="icon-share" src="/img/icon_share.png"></image>快让朋友来领
+        </view>
+        <view class="remaining">还剩{{snatchInfo.remaining}}份没人领</view>
+        <image class="btn-close" bindtap="handleSnatchClose" src="/img/icon_cloose_btn.png"></image>
+    </view>
+    <view wx:else class="result-info received" animation="{{snatchAnimation}}">
+        <image class="bg" src="/img/icon_open_style_2.png"></image>
+        <view class="message">{{snatchInfo.message}}</view>
+        <view class="title">{{snatchInfo.title}}</view>
+        <view class="remaining">还剩{{snatchInfo.remaining}}份</view>
+        <image class="btn-close" bindtap="handleSnatchClose" src="/img/icon_cloose_btn.png"></image>
+    </view>
+</view>
+
+<map id="hb-map" class="hb-map" wx:if="{{mapVisible}}" show-location longitude="{{coi.longitude}}" latitude="{{coi.latitude}}"
+    markers="{{markers}}" circles="{{circles}}" include-points="{{includePoints}}" bindtap="handleMapTap" bindmarkertap="handleMapMarkerTap"
+    bindregionchange="handleMapRegionChange">
+    <cover-view class="map-switcher" bindtap="handleTogglehMap">
+        <cover-image class="icon" src="/img/icon_list_mode.png"></cover-image>
+        <cover-view class="label">列表</cover-view>
+    </cover-view>
+
+    <cover-view class="snatch-result" catchtouchmove="true" hidden="{{!mapVisible || !snatchVisible}}">
+        <cover-view class="shadow"></cover-view>
+        <cover-view hidden="{{snatchInfo.status !== 0}}" class="result-info" animation="{{snatchAnimation}}">
+            <cover-image class="bg" src="/img/icon_open_style_1.png"></cover-image>
+            <cover-view class="amount-prefix">恭喜您获得</cover-view>
+            <cover-view class="amount-info">
+                <cover-view class="amount">{{snatchInfo.amount}}</cover-view>
+                <cover-view class="amount-unit">元</cover-view>
+            </cover-view>
+            <cover-view class="title">{{snatchInfo.title}}</cover-view>
+            <cover-view class="btn-share" data-id="{{snatchInfo.redbagId}}" bindtap="handleSnatchShare">
+                <cover-image class="icon-share" src="/img/icon_share.png"></cover-image>快让朋友来领
+            </cover-view>
+            <cover-view class="remaining">还剩{{snatchInfo.remaining}}份没人领</cover-view>
+            <cover-image class="btn-close" bindtap="handleSnatchClose" src="/img/icon_cloose_btn.png"></cover-image>
+        </cover-view>
+        <cover-view hidden="{{snatchInfo.status === 0}}" class="result-info received" animation="{{snatchAnimation}}">
+            <cover-image class="bg" src="/img/icon_open_style_2.png"></cover-image>
+            <cover-view class="message">{{snatchInfo.message}}</cover-view>
+            <cover-view class="title">{{snatchInfo.title}}</cover-view>
+            <cover-view class="remaining">还剩{{snatchInfo.remaining}}份</cover-view>
+            <cover-image class="btn-close" bindtap="handleSnatchClose" src="/img/icon_cloose_btn.png"></cover-image>
+        </cover-view>
+    </cover-view>
+
+    <cover-view class="hb-popover" hidden="{{!popoverVisible}}">
+        <cover-image class="bg" src="/img/bg_popover.png"></cover-image>
+        <cover-view class="hb-type">{{popover.redbagCategory}}</cover-view>
+        <cover-view class="hb-distance">{{popover.distanceStr}}km</cover-view>
+        <cover-view class="hb-subtitle">{{popover.redbagType}}</cover-view>
+        <cover-view class="hb-title">{{popover.redbagName}}</cover-view>
+        <cover-view class="btn-get" data-id="{{popover.redbagId}}" bindtap="handleHbTap">领取</cover-view>
+    </cover-view>
+</map>

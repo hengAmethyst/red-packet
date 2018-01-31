@@ -1,0 +1,12 @@
+<!--common/userCenter/userCenterCell.wxml-->
+<view class='userCenterCell' bindtap='userCenterCellClick'>
+
+  <text class='title'>{{info.title}}</text>
+  <text class='subtitle'>{{info.subtitle}}</text>
+  <text class='description'>{{info.description}}</text>
+
+  <!-- 红点 -->
+  <view class='redDot-view' wx:if="{{info.isShowRedDot}}"></view>
+
+  <image class='right-image' src='/img/icon_rightArrow.png'></image>
+</view>

@@ -1,0 +1,33 @@
+<!--  发红包高级设置  -->
+<view class="advanced-set">
+<!--  可以被搜索到  -->
+  <view class="able-searched">
+    <view class="name">可以被周边的人搜索到</view>
+    <switch bindchange="clickSwitch" data-type="{{0}}" checked color="#ee4126"/>
+  </view>
+  <!--  地理位置  -->
+  <view class="localtion">
+    <view class="localtion-name">地理位置</view>
+    <view class="options" bindtap="chooseLocation">
+      <text>{{address}}</text>
+      <image src="/img/icon_rightArrow.png"></image>
+    </view>
+  </view>
+  <!--  范围  -->
+  <view class="scope">
+    <view class="scope-name">范围</view>
+    <view class="options" bindtap="chooseScope">
+      <text>{{scopeName}}</text>
+      <image src="/img/icon_rightArrow.png"></image>
+    </view>
+  </view>
+  <!--  红包可以被发送到群  -->
+  <view class="able-share">
+    <view class="name">红包可以发送给微信好友或群</view>
+    <switch bindchange="clickSwitch" data-type="{{1}}" color="#ee4126"/>
+  </view>
+  <!--  发红包按钮  -->
+  <view class="submit-btn" bindtap="goback">
+    确认
+  </view>
+</view>

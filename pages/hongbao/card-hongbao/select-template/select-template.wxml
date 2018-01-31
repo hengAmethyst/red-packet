@@ -1,0 +1,13 @@
+<view class="select-container">
+    <view class="select-wrapper">
+        <view class="add-custom template-item">
+            <view class="desc">自定义背景
+                <br/>750*950</view>
+        </view>
+        <block>
+            <view class="template-item">
+                <image src="" mode="aspectFill"></image>
+            </view>
+        </block>
+    </view>
+</view>

@@ -1,0 +1,46 @@
+<view class="index">
+  <!-- 1rpx  -->
+  <view style="width:100%;height:1rpx;background:#ccc;opacity:0.5;"></view>
+  <!-- 用户头像和昵称  -->
+  <view class="user">
+    <image class="user-img" src="/img/pic_jifen.png"/>
+    <view class="user-name">Amethyst</view>
+  </view>
+  <!--  积分和金库信息  -->
+  <view class="some-info">
+    <view class="repository">
+      <text class="money">￥0.4</text>
+      <text class="word">小金库</text>
+      <view class="space"></view>
+    </view>
+    <view class="jifen">
+      <text class="num">5</text>
+      <text class="word">积分</text>
+    </view>
+  </view>
+  <!--  pic选项  -->
+  <view class="pic-btn-one">
+    <view class="btn_1 btn-img">
+      <view class="word_1">拆红包</view>
+      <view class="word_2">2个待拆</view>
+      <image src="/img/pic_chaihongbao.png"></image>
+    </view>
+    <view class="btn_2 btn-img">
+      <view class="word_1">发红包</view>
+      <view class="word_2">13454个人正在发红包</view>
+      <image src="/img/pic_fahongbao.png"></image>
+    </view>
+  </view>
+  <view class="pic-btn-two">
+    <navigator class="btn_3 btn-img" url="/pages/findHongbao/findHongbao">
+      <view class="word_1">找红包</view>
+      <view class="word_2">找到20个红包</view>
+      <image src="/img/pic_zhaohongbao.png"></image>
+    </navigator>
+    <view class="btn_4 btn-img">
+      <view class="word_1">积分道具</view>
+      <view class="word_2">2740个积分</view>
+      <image src="/img/pic_jifen.png"></image>
+    </view>
+  </view>
+</view>

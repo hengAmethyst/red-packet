@@ -1,0 +1,81 @@
+<!--pages/userCenter/suggestions/suggestions.wxml-->
+
+<import src="/common/template/wetoast/wetoast.wxml" />
+<template is="wetoast" data="{{...__wetoast__}}" />
+
+<import src="/common/head/head" />
+<template is="head" />
+
+<form bindsubmit="formSubmit">
+  <view class='suggestions-box'>
+    <!--  选项按钮  -->
+    <!-- <view class="festival-options">
+    <view class="options-btn" bindtap="showFestivalList">
+      <text>{{nowFestival}}</text>
+      <image src="/img/icon_down_arrow.png"></image>
+      <view class="up-arrow" wx:if="{{showArrow}}"></view>
+    </view>
+  </view> -->
+
+    <!-- 投诉/建议下拉选择框 -->
+    <!-- <scroll-view scroll-y class="festival-name-list-box" style="height:{{festivalListHeight}}" animation="{{animationData}}">
+    <view class="festival-name-list-child" style="color:{{index==nowFesIndex?'#ee4126':'#2b2b2b'}};border-bottom:{{index==nowFesIndex?'1rpx solid #ee4126':'solid 1rpx #ededed;'}}" wx:for="{{festivalList}}" bindtap="chooseFestival" data-index="{{index}}" data-nowFestival="{{item}}">
+      <text>{{item}}</text>
+    </view>
+  </scroll-view> -->
+
+
+    <!-- *请描述您的投诉和建议 -->
+    <view class='suggestions-input-view'>
+      <view class='title-view'>
+        <text class='tag-xing'>*</text>
+        <text class='title'>请描述您的投诉和建议</text>
+      </view>
+
+      <textarea name="content" class='input-textarea' placeholder-class="input-placeholder" placeholder="请简要说明你的能力或工作经历" bindinput='personalDescInputClick' maxlength="200" placeholder-style="color:#d1d1d3" value="{{personalDesc}}"></textarea>
+      <text class='input-number'>{{personalDescLength+ "/" + "200"}}</text>
+    </view>
+
+
+    <!-- *上传凭证(不超过3张) -->
+    <view class='suggestions-photo-view'>
+      <view class='title-view'>
+        <text class='title'>上传凭证</text>
+        <text class='tip'>(不超过3张)</text>
+      </view>
+
+      <!-- 上传图片 -->
+      <view class='photo-box'>
+        <view class='photo-view' wx:for="{{picList}}" wx:for-item="itemName" wx:for-index="nowIndex">
+          <image src="{{itemName.url}}" class="common-pic" bindtap="showBigPic" data-index="{{nowIndex}}" data-img="{{itemName}}" mode="aspectFill"></image>
+          <image class='del-btn' src='/img/icon_sub_cloose.png' bindtap='delPhotoClick' data-index="{{nowIndex}}"></image>
+        </view>
+        <image src="/img/icon_add_pic.png" class="add-btn" bindtap="addPic" wx:if="{{picList.length < 3}}"></image>
+      </view>
+    </view>
+
+
+    <!-- 联系人  联系方式 -->
+    <view class='contact-box'>
+      <!-- 联系人 -->
+      <view class='contact-title-view'>
+        <text class='title'>联系人</text>
+        <input name="name" maxlength='30'></input>
+      </view>
+
+      <!-- 联系方式 -->
+      <view class='contact-title-view'>
+        <text class='title'>联系方式</text>
+
+        <input name="phone" type='number' maxlength='11'></input>
+      </view>
+    </view>
+
+    <button class='subBtn' formType="submit">提交</button>
+
+  </view>
+</form>
+
+
+<!--  蒙版  -->
+<view class="mark" wx:if="{{showMark}}"></view>

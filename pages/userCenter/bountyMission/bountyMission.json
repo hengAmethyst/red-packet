@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "天天领红包",
+  "usingComponents": {
+    "bountyMissionCell": "/common/userCenter/bountyMissionCell/bountyMissionCell",
+    "removeRedEnvelope": "/common/userCenter/removeRedEnvelope/removeRedEnvelope"
+  }
+}

@@ -1,0 +1,402 @@
+/*  发红包  */
+.fa-hongbao{
+  display: flex;
+  flex-direction: column;
+  width:100%;
+  height:100%;
+  background:#f7f7f7;
+}
+/*  单个红包金额  */
+.fa-hongbao .per-sum{
+  margin:0 auto;
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+  width:690rpx;
+  height:90rpx;
+  margin-top:30rpx;
+  border-radius: 8rpx;
+  background:#fff;
+}
+.fa-hongbao .per-sum .per-sum-name{
+  margin-left:30rpx;
+  font-size:30rpx;
+  color: #2b2b2b;
+}
+.fa-hongbao .per-sum .per-sum-input{
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.fa-hongbao .per-sum .per-sum-input input{
+  width:140rpx;
+  height:88rpx;
+  font-size:30rpx;
+  text-align: end;
+}
+.fa-hongbao .per-sum .per-sum-input text{
+  margin-right:30rpx;
+  margin-left:20rpx;
+  font-size:32rpx;
+  color:#2b2b2b;
+}
+/*  红包type的tip  */
+.fa-hongbao .fa-hongbao-tip{
+  margin:0 auto;
+  width:634rpx;
+  margin-top:23rpx;
+  font-size:24rpx;
+  color: #b9b9b9;
+}
+.fa-hongbao .fa-hongbao-tip text{
+  color:#ee4126;
+}
+/*  红包个数  */
+.fa-hongbao .hongbao-amount{
+  margin:0 auto;
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+  width:690rpx;
+  height:90rpx;
+  margin-top:30rpx;
+  border-radius: 8rpx;
+  background:#fff;
+}
+.fa-hongbao .hongbao-amount .hongbao-amount-name{
+  margin-left:30rpx;
+  font-size:30rpx;
+  color: #2b2b2b;
+}
+.fa-hongbao .hongbao-amount .hongbao-amount-input{
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: end;
+}
+.fa-hongbao .hongbao-amount .hongbao-amount-input input{
+  width:140rpx;
+  height:88rpx;
+  font-size:30rpx;
+}
+.fa-hongbao .hongbao-amount .hongbao-amount-input text{
+  margin-right:30rpx;
+  margin-left:20rpx;
+  font-size:32rpx;
+  color:#2b2b2b;
+}
+
+
+
+
+
+.fa-hongbao .share-tip-backmoney{
+  margin-left:60rpx;
+  font-size:24rpx;
+  color: #b9b9b9;
+}
+/*总奖金  */
+.share-all-money{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin:0 auto;
+  width:690rpx;
+  height:90rpx;
+  margin-top:30rpx;
+  background:#fff;
+  border-radius: 6rpx;
+}
+.share-all-money .name{
+   margin-left:30rpx; 
+  font-size:30rpx;
+  color: #2b2b2b;
+}
+
+.share-all-money .money .money-num{
+  margin-right:22rpx;
+  font-size:30rpx;
+  color: #b9b9b9;
+}
+.share-all-money .money .money-unit{
+  margin-right:30rpx;
+  font-size:30rpx;
+  color: #2b2b2b;
+}
+/*总个数  */
+.share-all-count{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin:0 auto;
+  width:690rpx;
+  height:90rpx;
+  margin-top:30rpx;
+  background:#fff;
+  border-radius: 6rpx;
+}
+.share-all-count .name{
+   margin-left:30rpx; 
+  font-size:30rpx;
+  color: #2b2b2b;
+}
+
+.share-all-count .count .count-num{
+  margin-right:22rpx;
+  font-size:30rpx;
+  color: #b9b9b9;
+}
+.share-all-count .count .count-unit{
+  margin-right:30rpx;
+  font-size:30rpx;
+  color: #2b2b2b;
+}
+/*  个人信息  */
+.person-info{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin:0 auto;
+  width:690rpx;
+  height:90rpx;
+  margin-top:30rpx;
+  background:#fff;
+  border-radius: 6rpx;
+}
+.person-info-name{
+  margin-left:30rpx; 
+  font-size:30rpx;
+  color: #2b2b2b;
+}
+.person-info image{
+  width:36rpx;
+  height:42rpx;
+  margin-right:30rpx;
+}
+/*  高级设置  */
+.advanced-set{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin:0 auto;
+  width:690rpx;
+  height:90rpx;
+  margin-top:30rpx;
+  background:#fff;
+  border-radius: 6rpx;
+}
+.advanced-set-name{
+  margin-left:30rpx; 
+  font-size:30rpx;
+  color: #2b2b2b;
+}
+.advanced-set image{
+  width:36rpx;
+  height:42rpx;
+  margin-right:30rpx;
+}
+
+
+
+/*能够被搜索到  */
+.able-search{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width:100%;
+  height:130rpx;
+}
+.able-search text{
+  margin-left:60rpx;
+  font-size:26rpx;
+  color: #2b2b2b;
+  opacity: 0.6;
+}
+.able-search switch{
+  margin-right:50rpx;
+}
+/*地理位置  */
+.location{
+  margin:0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width:690rpx;
+  height:90rpx;
+  background:#fff;
+  border-radius: 6rpx;
+}
+.location .name{
+  margin-left:30rpx;
+  font-size:30rpx;
+  color: #2b2b2b;
+}
+.location .options{
+  display: flex;
+  align-items: center;
+  margin-right:30rpx;
+}
+.location .options text{
+  margin-right:16rpx;
+  font-size:30rpx;
+  color: #b9b9b9;
+}
+.location .options image{
+  width:30rpx;
+  height:28rpx;
+}
+/*  范围  */
+.scope{
+  margin:0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width:690rpx;
+  height:90rpx;
+  margin-top:20rpx;
+  background:#fff;
+  border-radius: 6rpx;
+}
+.scope .name{
+  margin-left:30rpx;
+  font-size:30rpx;
+  color: #2b2b2b;
+}
+.scope .options{
+  display: flex;
+  align-items: center;
+  margin-right:30rpx;
+}
+.scope .options text{
+  margin-right:16rpx;
+  font-size:30rpx;
+  color: #2b2b2b;
+}
+.scope .options image{
+  width:30rpx;
+  height:28rpx;
+}
+/*  发送按钮  */
+.finish-send-btn{
+  position:absolute;
+  bottom:0;
+  left:0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width:100%;
+  height:88rpx;
+  font-size:36rpx;
+  color:#fff;
+  background:#ee4126;
+}
+/*  默认发送按钮  */
+.finish-send-btn-default{
+  position:absolute;
+  bottom:0;
+  left:0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width:100%;
+  height:88rpx;
+  font-size:36rpx;
+  color:#fff;
+  background:#dcdcdc;
+}
+/*  确认支付弹框  */
+.sure-pay{
+  position:fixed;
+  top:35%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  width:500rpx;
+  height:282rpx;
+  background:#fff;
+  border-radius:6rpx;
+  z-index:3001;
+}
+.sure-pay .title{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width:100%;
+  height:193rpx;
+  font-weight: 600;
+  font-size:34rpx;
+  color: #333839;
+}
+.sure-pay .btns{
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+  width:100%;
+  height:88rpx;
+  border-top:solid 1rpx #e2e2e2;
+}
+.sure-pay .btns .form-1{
+  width:50%;
+  height:100%;
+}
+.sure-pay .btns .form-1 .way-1{
+  position:relative;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  width:100%;
+  height:100%;
+  font-size:30rpx;
+  color: #445354;
+  border-right:solid 1rpx #e2e2e2;
+}
+.sure-pay .btns .form-1 .way-1 .pay-btn{
+  position:absolute;
+  top:0;
+  left:0;
+  background:transparent;
+  width:100%;
+  height:100%;
+  font-size:30rpx;
+  color: #445354;
+  border:1rpx solid transparent;
+}
+
+.sure-pay .btns .form-2{
+  width:50%;
+  height:100%;
+}
+
+.sure-pay .btns .form-2 .way-2{
+  position:relative;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  width:100%;
+  height:100%;
+  font-size:30rpx;
+   color: #20b6be;
+}
+.sure-pay .btns .form-2 .way-2 .pay-btn{
+  position:absolute;
+  top:0;
+  left:0;
+  background:transparent;
+  width:100%;
+  height:100%;
+  font-size:30rpx;
+  color: #20b6be;
+  background:transparent;
+  border:1rpx solid transparent;
+}
+
+/* 蒙版  */
+.mask{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background:#000;
+  opacity:0.5;
+  z-index:3000;
+}

@@ -1,0 +1,64 @@
+/**toast.wxss**/
+
+.wetoast {
+  display: none;
+}
+
+.wetoast_show {
+  display: block;
+}
+
+.wetoast__mask {
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+}
+
+.wetoast__bd {
+  opacity: 0;
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  z-index: 5000;
+  min-width: 8em;
+  max-width: 70%;
+  top: 30%;
+  left: 50%;
+  padding: 20rpx;
+  box-sizing: border-box;
+  transform: translateX(-50%);
+  background: rgba(40, 40, 40, 0.75);
+  border-radius: 5rpx;
+  color: #fff;
+  word-wrap: break-word;
+  word-break: break-all;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.wetoast__bd__have__image {
+  min-height: 8em;
+}
+
+.wetoast__bd__no__image {
+  min-height: 1em;
+}
+
+.wetoast__bd__img {
+  margin-top: 3rpx;
+}
+
+.wetoast__bd__img_desc {
+  width: 55rpx;
+  height: 55rpx;
+  vertical-align: middle;
+}
+
+.wetoast__bd__title {
+  text-align: center;
+  margin: 3rpx 0;
+  font-size: 30rpx;
+}

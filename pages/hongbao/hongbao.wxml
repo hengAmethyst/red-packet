@@ -1,0 +1,45 @@
+<view class="hongbao">
+  <view style="width:100%;height:1rpx;background:#ccc;opacity:0.8;"></view>
+  <!--  选项按钮  -->
+  <view class="festival-options">
+    <view class="options-btn" bindtap="showFestivalList">
+      <text>{{nowFestival}}</text>
+      <image src="/img/icon_down_arrow.png"></image>
+       <view class="up-arrow" wx:if="{{showArrow}}"></view> 
+    </view>
+  </view>
+  <!--  节气列表  -->
+  <scroll-view scroll-y class="festival-name-list-box" style="height:{{festivalListHeight}}"  animation="{{animationData}}" >
+    <view class="festival-name-list-child" style="color:{{index==nowFesIndex?'#ee4126':'#2b2b2b'}};border-bottom:{{index==nowFesIndex?'1rpx solid #ee4126':'solid 1rpx #dcdcdc;'}}" wx:for="{{festivalList}}" bindtap="chooseFestival" data-index="{{index}}" data-nowFestival="{{item}}">
+      <text>{{item.festivalName}}</text>
+    </view>
+  </scroll-view>
+  <!-- swiper选择模板  -->
+  <swiper class="swiper" indicator-dots="{{true}}" indicator-color="rgba(255, 255, 255,0.2)" indicator-active-color="rgba(255, 255, 255,1)" duration="300" bindchange="nowSwiper" current="{{1}}">
+    <!--  自定义模板  -->
+    <swiper-item class="swiper-item defined">
+      <image src="{{bgImg}}" class="slide-image" bindtap="uploadBg"/>
+      <view class="defined-word" wx:if="{{showDefinedWord}}">自定义模板</view>
+    </swiper-item>
+    <!--  普通模板  -->
+    <swiper-item class="swiper-item" wx:for="{{typeList}}">
+      <image src="{{item.url}}" class="slide-image"/>
+      <!--  头像和祝福语  -->
+      <view class="blessing-headimg">
+        <view class="headimg">
+          <image src="{{userInfo.avatarUrl}}"></image>
+          <text>{{userInfo.nickName}}</text>
+        </view>
+        <view class="blessing">
+          大吉大利,万事如意
+        </view>
+      </view>
+    </swiper-item>
+  </swiper>
+  <!--  使用按钮  -->
+  <view class="use-btn" bindtap = "gotoOtherPage">
+    使用
+  </view>
+  <!--  蒙版  -->
+  <view class="mark" wx:if="{{showMark}}"></view>
+</view>

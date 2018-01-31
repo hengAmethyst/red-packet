@@ -1,0 +1,67 @@
+<!--  发红包  -->
+<view class="fa-hongbao">
+  <!-- 单个金额  -->
+  <view class="per-sum">
+    <view class="per-sum-name">{{moneyCate?'单个金额':'总金额'}}</view>
+    <view class="per-sum-input">
+      <input type="digit" align="right" value="{{input_1}}" placeholder='输入金额' maxlength='6' bindinput="inputSome" data-type="{{0}}"></input>
+      <text>元</text>
+    </view>
+  </view>
+  <!-- 文字提示  -->
+  <view class="fa-hongbao-tip">
+    当前为{{nowCate}}，
+    <text bindtap="changeCate">改为{{otherCate}}</text>
+  </view>
+  <!-- 红包个数  -->
+  <view class="hongbao-amount">
+    <view class="hongbao-amount-name">红包个数</view>
+    <view class="hongbao-amount-input">
+      <input type="number" value="{{input_2}}" placeholder='填写个数' maxlength='6' bindinput="inputSome" data-type="{{1}}"></input>
+      <text>个</text>
+    </view>
+  </view>
+  <!--  文字提示  -->
+  <view class="fa-hongbao-tip">
+    贺卡红包手续费率1%，红包七日内未被领取完会退回账户
+  </view>
+  <!--  个人信息  -->
+  <view class="person-info" bindtap="goOtherPage" data-type="{{0}}">
+    <view class="person-info-name">个人信息</view>
+    <image src="/img/icon_rightArrow.png"></image>
+  </view>
+  <!--  高级设置  -->
+  <view class="advanced-set" bindtap="goOtherPage" data-type="{{1}}">
+    <view class="advanced-set-name">高级设置</view>
+    <image src="/img/icon_rightArrow.png"></image>
+  </view>
+  <!--  发红包按钮  -->
+  <view class="finish-send-btn" bindtap="surePay" wx:if="{{btn_status}}">
+    发红包
+  </view>
+   <view class="finish-send-btn-default" wx:else>
+    发红包
+  </view> 
+  <view class="sure-pay" wx:if="{{showPaySure}}">
+    <view class="title">支付通知</view>
+    <view class="btns">
+
+      <form bindsubmit="formSubmit" class="form-1" report-submit="true">
+        <view class="way-1" bindtap="distribute" data-type="1">
+          微信支付
+          <button formType="submit" plain="{{true}}" class="pay-btn"></button>
+        </view>
+      </form>
+
+      <form bindsubmit="formSubmit" class="form-2" report-submit="true">
+        <view class="way-2" bindtap="distribute" data-type="2" wx:if="{{ableUseRepository}}">
+          小金库支付
+          <button formType="submit" plain="{{true}}" class="pay-btn"></button>
+        </view>
+        <view class="way-2" style="color:#ccc" wx:else bindtap="distribute" data-type="3">小金库支付</view>
+      </form>
+    </view>
+  </view>
+  <!--  蒙版  -->
+  <view class="mask" wx:if="{{showPaySure}}" bindtap="cancelPay"></view>
+</view>

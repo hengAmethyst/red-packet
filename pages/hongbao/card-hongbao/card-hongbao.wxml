@@ -1,0 +1,9 @@
+<view class="card-hongbao">
+    <image src="http://img07.tooopen.com/images/20171109/tooopen_sy_228085774151.jpg" class="card-bg" mode="aspectFill"></image>
+    <view class="change-template" catchtap='handleTapSelect'>点击更换祝福模板</view>
+    <view class="card-info">
+        <view class="no-info">点击选择名片</view>
+    </view>
+    <input class="wish" placeholder="点击输入祝福语"></input>
+    <view class="submit-btn">确认</view>
+</view>

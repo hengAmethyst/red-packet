@@ -1,0 +1,185 @@
+/*  小金库  */
+page{
+  background-color: rgb(247, 247, 247);
+}
+
+.repository{
+  width:100%;
+  height:100%;
+}
+/*  顶部余额栏  */
+.repository-title{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width:100%;
+  height:220rpx;
+  background:#fff;
+}
+
+
+.repository-title .getCash-image{
+  position: absolute;
+  width: 117rpx;
+	height: 108rpx;
+	opacity: 0.9;
+  right: 0rpx;
+  top: 65rpx;
+}
+
+.repository-title .left-title{
+  width:100%;
+  margin-top:50rpx;
+  text-align:center;
+  font-size:24rpx;
+  color: #2b2b2b;
+}
+.repository-title .left-money{
+  width:100%;
+  text-align:center;
+  font-weight: bold;
+  font-size:60rpx;
+  color: #ee4126;
+  margin-top: 20rpx;
+}
+.repository-title .options{
+  
+  display: flex;
+  width:100%;
+  margin-top:50rpx;
+}
+.repository-title .options .getcash{
+  position:relative;
+  width:50%;
+  text-align: center;
+  font-size:30rpx;
+  color: #2b2b2b;
+}
+.repository-title .options .getcash .space{
+  position:absolute;
+  top:0;
+  right:0;
+  transform: translateY(20%);
+  width:1rpx;
+  height:30rpx;
+  background:#ccc;
+}
+.repository-title .options .charge{
+  width:50%;
+  text-align: center;
+  font-size:30rpx;
+  color: #2b2b2b;
+}
+/* 日期选项  */
+.date-option{
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+  width:100%;
+  height:112rpx;
+  margin-top:20rpx;
+  box-shadow: inset 0 -1rpx 0 0 rgb(243, 243, 243);
+  background:#fff;
+}
+.date-option .left{
+  width:40rpx;
+  height:40rpx;
+  margin-left:60rpx;
+}
+.date-option .right{
+  width:40rpx;
+  height:40rpx;
+  margin-right:60rpx;
+}
+.date-picker{
+  font-size:28rpx;
+  color: #2b2b2b;
+}
+/* 记录  */
+.record{
+  width:100%;
+}
+.record .record-item{
+  display:flex;
+  position: relative;
+  align-items: center;
+  width:100%;
+  height:90rpx;
+  font-size:26rpx;
+  color: #2b2b2b;
+  background:#fff;
+  box-shadow: inset 0 -1rpx 0 0 rgb(243, 243, 243);
+}
+
+.record .record-item .time{
+  margin-left: 40rpx;
+  width: 150rpx;
+}
+
+.record .record-item .type{
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 200rpx;
+  top: 0rpx;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto; /* 有了这个就自动居中了 */
+}
+
+.record .record-item .money{
+  position: absolute;
+  right: 40rpx;
+  height: 50rpx;
+  top: 20rpx;
+  width: 200rpx;
+  text-align: right;
+}
+
+
+
+
+
+.test{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width:100%;
+  height:40rpx;
+}
+.test .one{
+  position:relative;
+  width:50%;
+  height:100%;
+  text-align:center;
+}
+.test .two{
+  width:50%;
+  height:100%;
+  text-align:center;
+}
+
+.loadMoreTip {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50rpx;
+  width: 100%;
+  margin-top: 30rpx;
+  margin-bottom: 30rpx;
+}
+
+.loadMoreTip text {
+  width: 100%;
+  font-size: 30rpx;
+  text-align: center;
+  color: #808080;
+}
+
+
+.noticeList{
+  width: 100%;
+  height: 100%;
+}

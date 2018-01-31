@@ -1,0 +1,8 @@
+<template name='empty'>
+  <view style='width: 100%;height: 100%;display: flex;flex-direction: column;align-items: center;justify-content: center'>
+    <image src='/img/pic_space.png' style='width:196rpx;height:202rpx'></image>
+    <text style='  margin-top: 15rpx;font-family: PingFangSC;font-size: 26rpx;text-align: center;color: #7c7c7c'>暂无数据</text>
+    <!-- 仅仅为占位用  使提示图片和文字 上移 -->
+    <image  style='width:341rpx;height:350rpx'></image>
+  </view>
+</template>

@@ -1,0 +1,256 @@
+/* pages/userCenter/suggestions/suggestions.wxss */
+
+page {
+  background-color: rgb(247, 247, 247);
+}
+
+.suggestions-box {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+}
+
+.festival-options {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 90rpx;
+  background: #fff;
+  z-index: 10001;
+  border-top: 1rpx solid #ededed;
+}
+
+.festival-options .options-btn {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.festival-options .options-btn text {
+  font-size: 28rpx;
+  color: #2b2b2b;
+}
+
+.festival-options .options-btn .up-arrow {
+  position: absolute;
+  left: 38%;
+  bottom: -46rpx;
+  width: 25rpx;
+  height: 25rpx;
+  background: #fff;
+  border-top: 1rpx solid #dcdcdc;
+  border-left: 1rpx solid #dcdcdc;
+  transform: rotate(45deg) translateX(-50%);
+  z-index: 2000;
+}
+
+.festival-options .options-btn image {
+  width: 27rpx;
+  height: 28rpx;
+  margin-left: 20rpx;
+}
+
+/*  投诉建议  */
+
+.festival-name-list-box {
+  position: absolute;
+  top: 90rpx;
+  left: 0;
+  width: 100%;
+  height: 0;
+  background: #fff;
+  z-index: 10001;
+  border-top: 1rpx solid #ededed;
+}
+
+/*具体选项  */
+
+.festival-name-list-child {
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  width: 690rpx;
+  height: 80rpx;
+  background: #fff;
+  font-size: 30rpx;
+  color: #031722;
+}
+
+.festival-name-list-child text {
+  margin-left: 30rpx;
+}
+
+/* *请描述您的投诉和建议 */
+
+.suggestions-input-view {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20rpx;
+  width: 100%;
+  height: 400rpx;
+  background-color: #fff;
+  box-shadow: inset 0 -1rpx 0 0 rgb(241, 241, 241);
+}
+
+.suggestions-input-view .title-view {
+  margin-top: 30rpx;
+  margin-left: 30rpx;
+}
+
+.suggestions-input-view .title-view .tag-xing {
+  font-size: 32rpx;
+  color: #ee4126;
+}
+
+.suggestions-input-view .title-view .title {
+  font-size: 32rpx;
+  color: #2b2b2b;
+}
+
+.suggestions-input-view .input-textarea {
+  display: flex;
+  margin-left: 30rpx;
+  margin-right: 30rpx;
+  font-size: 28rpx;
+  width: 690rpx;
+  flex: 1;
+  z-index: 1;
+  padding: 30rpx 0rpx; 
+  height: 220rpx;
+}
+
+.suggestions-input-view .input-number {
+  margin-right: 30rpx;
+  margin-top: 10rpx;
+  margin-bottom: 10rpx;
+  font-size: 26rpx;
+  text-align: right;
+  color: #dcdcdc;
+}
+
+
+/* *上传凭证(不超过3张) */
+
+.suggestions-photo-view {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20rpx;
+  width: 100%;
+  height: 300rpx;
+  background-color: #fff;
+  box-shadow: inset 0 -1rpx 0 0 rgb(241, 241, 241);
+}
+
+.suggestions-photo-view .title-view {
+  margin-top: 30rpx;
+  margin-left: 30rpx;
+}
+
+
+
+.suggestions-photo-view .title-view .title {
+  font-size: 32rpx;
+  color: #2b2b2b;
+}
+
+.suggestions-photo-view .title-view .tip {
+  font-size: 32rpx;
+  color: #dcdcdc;
+  margin-left: 3rpx;
+}
+
+
+
+.suggestions-photo-view .photo-box{
+  
+  display:flex;
+  flex-wrap: wrap;
+  width:570rpx;
+  height:100%;
+  padding-bottom: 30rpx;
+}
+
+.suggestions-photo-view .photo-box .photo-view{
+  position: relative;
+}
+
+.suggestions-photo-view .del-btn{
+  position: absolute;
+  width: 30rpx;
+	height: 30rpx;
+  right: -10rpx;
+  top: 25rpx;
+}
+
+
+.suggestions-photo-view .photo-box .common-pic{
+  width:140rpx;
+  height:140rpx;
+  margin-left: 40rpx;
+  margin-top:40rpx;
+}
+
+
+.suggestions-photo-view .photo-box .add-btn{
+  width:140rpx;
+  height:140rpx;
+  margin-top:40rpx;
+  margin-left: 40rpx;
+}
+
+
+/* 联系人  联系方式 */
+.contact-box{
+  width: 100%;
+  height: 180rpx;
+  background-color: white;
+  margin-top: 20rpx;
+}
+
+/* 联系人  联系方式 */
+.contact-box .contact-title-view {
+  width: 100%;
+  height: 90rpx;
+  display: flex;
+  align-items: center;
+  box-shadow: inset 0 -1rpx 0 0 rgb(241, 241, 241);
+}
+
+.contact-box .contact-title-view .title{
+  font-size: 30rpx;
+  color: #2b2b2b;
+  width: 150rpx;
+  margin-left: 30rpx;
+}
+
+.contact-box .contact-title-view input{
+  width: 550rpx;
+  text-align: right;
+}
+
+
+.subBtn{
+  margin-top: 100rpx;
+  width: 85%;
+	height: 88rpx;
+	background-color: #ee4126;
+  font-size: 36rpx;
+	text-align: center;
+	color: #ffffff;
+}
+
+/*  蒙版  */
+
+.mark {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: #000;
+  opacity: 0.5;
+  z-index: 9999;
+}

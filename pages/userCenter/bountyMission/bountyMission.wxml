@@ -1,0 +1,26 @@
+<!--pages/userCenter/bountyMission/bountyMission.wxml-->
+
+<import src="/common/head/head" />
+<template is="head" />
+
+<view class="get-cash">
+  <view class="input-money">
+    <view class="input-money-tip">
+      <text>红包兑换码</text>
+    </view>
+    <view class="input-money-content">
+      <input type="number" placeholder='输入兑换码' bindinput='nowInput' placeholder-style="color:#d1d1d3" maxlength="{{maxLength}}" />
+      <view class="submit-active" wx:if="{{ableGet}}">兑换</view>
+      <view class="submit-default" wx:else>兑换</view>
+    </view>
+  </view>
+</view>
+
+
+ <removeRedEnvelope bindclooseClick="clooseClick"></removeRedEnvelope> 
+
+
+
+<bountyMissionCell></bountyMissionCell>
+<bountyMissionCell></bountyMissionCell>
+<bountyMissionCell></bountyMissionCell>

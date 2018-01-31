@@ -1,0 +1,20 @@
+<!-- 充值  -->
+<view class="charge">
+  <view class="input-money">
+    <view class="input-money-tip">
+      <text>请填写充值金额</text>  
+    </view>
+    <view class="input-money-content">
+      <text>￥ </text>
+      <input type="text" placeholder='请输入充值金额'/>
+    </view>
+  </view>
+  <!--  手续费  -->
+  <view class="charge-fee">
+    <text>本次充值手续费￥0.3</text>
+  </view>
+  <!--  支付按钮  -->
+  <view class="pay-money">
+    支付 ￥100.03
+  </view>
+</view> 

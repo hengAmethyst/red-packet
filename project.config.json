@@ -1,0 +1,129 @@
+{
+	"description": "项目配置文件。",
+	"setting": {
+		"urlCheck": false,
+		"es6": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true
+	},
+	"compileType": "miniprogram",
+	"libVersion": "1.9.1",
+	"appid": "wx59696bb01a615568",
+	"projectname": "redEnvelope",
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"currentL": -1,
+			"list": []
+		},
+		"miniprogram": {
+			"current": -1,
+			"list": [
+				{
+					"id": -1,
+					"name": "小金库",
+					"pathName": "pages/repository/repository",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "注册",
+					"pathName": "pages/register/register",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "找红包",
+					"pathName": "pages/findHongbao/findHongbao",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "充值",
+					"pathName": "pages/repository/charge/charge",
+					"query": ""
+				},
+				{
+					"id": 4,
+					"name": "提现",
+					"pathName": "pages/repository/getCash/getCash",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "红包",
+					"pathName": "pages/hongbao/hongbao",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "分享红包",
+					"pathName": "pages/hongbao/share/share",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "用户中心",
+					"pathName": "pages/userCenter/userCenter",
+					"query": ""
+				},
+				{
+					"id": 8,
+					"name": "赏金任务",
+					"pathName": "pages/userCenter/bountyMission/bountyMission",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "红包兑换",
+					"pathName": "pages/userCenter/redEnvelopesCode/redEnvelopesCode",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "名片红包详情",
+					"pathName": "pages/hongbao/card-hongbao/card-hongbao",
+					"query": ""
+				},
+				{
+					"id": 8,
+					"name": "我的红包",
+					"pathName": "pages/myHongbao/myHongbao",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "个人红包详情页",
+					"pathName": "pages/personHongbaoDetail/personHongbaoDetail",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "发红包",
+					"pathName": "pages/hongbao/faHongBao/faHongBao",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "我的小金库",
+					"pathName": "pages/repository/repository",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "投诉建议",
+					"pathName": "pages/userCenter/suggestions/suggestions",
+					"query": ""
+				}
+			]
+		}
+	}
+}

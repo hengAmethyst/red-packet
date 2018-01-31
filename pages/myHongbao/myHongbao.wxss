@@ -1,0 +1,308 @@
+page {
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    background-color: #f7f7f7;
+}
+
+.my-hongbao-container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: #f7f7f7;
+}
+
+.tab {
+    border-top: 1rpx solid #ccc;
+    width: 100%;
+    height: 100rpx;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: #fff;
+    z-index: 100;
+}
+
+.tab .tab-name {
+    width: 50%;
+    text-align: center;
+    position: absolute;
+    top: 0;
+    font-size: 32rpx;
+    color: #b9b9b9;
+    line-height: 100rpx;
+}
+
+.tab .tab-name.active {
+    color: #2b2b2b;
+}
+
+.tab .tab-name.active::after {
+    content: '';
+    display: block;
+    width: 70rpx;
+    height: 6rpx;
+    border-radius: 3rpx;
+    background-color: #ee4126;
+    margin: -6rpx auto 0;
+}
+
+.tab .tab-name.active .underline {
+    width: 70rpx;
+    height: 6rpx;
+    border-radius: 3rpx;
+    background-color: #ee4126;
+    margin: -6rpx auto 0;
+}
+
+.tab .tab-name:nth-child(1) {
+    left: 0;
+}
+
+.tab .tab-name:nth-child(2) {
+    right: 0;
+}
+
+.tab-content {
+    padding-top: 100rpx;
+    width: 750rpx;
+    flex: 1;
+    /* position: absolute;
+    width: 750rpx;
+    left: 0;
+    top: 100rpx;
+    bottom: 0;
+    z-index: 10; */
+}
+
+.hb-list {
+    box-sizing: border-box;
+    padding: 10rpx 30rpx;
+}
+
+.hb-item {
+    position: relative;
+    height: 220rpx;
+    box-sizing: border-box;
+    margin-top: 20rpx;
+    background-color: #fff;
+    box-shadow: inset 0 -1px 0 0 #d9d9d9;
+    overflow: hidden;
+    border-radius: 16rpx 0 0 16rpx;
+}
+
+.sent-hb {
+    height: 280rpx;
+    border-radius: 16rpx 0 0 0;
+}
+
+.hb-item .hb-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 280rpx;
+}
+
+.hb-item .hb-content {
+    position: relative;
+    height: 220rpx;
+}
+
+.hb-item .hb-content .share {
+    position: absolute;
+    top: 0;
+    left: 61rpx;
+    width: 124rpx;
+    height: 50rpx;
+    border-bottom-left-radius: 6rpx;
+    border-bottom-right-radius: 6rpx;
+    background-color: #ffdf9b;
+    font-size: 24rpx;
+    color: #ee4126;
+    line-height: 50rpx;
+    text-align: center;
+}
+
+.hb-item .hb-content .source {
+    /* position: absolute; */
+    padding-top: 39rpx;
+    padding-right: 30rpx;
+    text-align: right;
+    line-height: 40rpx;
+    font-size: 28rpx;
+    color: #fff;
+}
+
+.hb-item .hb-content .name {
+    /* position: absolute;
+    top: 79rpx; */
+    margin-bottom: 32rpx;
+    padding-right: 30rpx;
+    font-size: 44rpx;
+    line-height: 62rpx;
+    font-weight: 600;
+    text-align: right;
+    color: #fff;
+}
+
+.hb-item .hb-content .name-wrapper {
+    margin-bottom: 32rpx;
+    display: flex;
+}
+
+.hb-item .hb-content .name-wrapper .amount {
+    padding-left: 56rpx;
+    width: 180rpx;
+    color: #fff;
+    font-size: 46rpx;
+    font-weight: 600;
+}
+
+.hb-item .hb-content .name-wrapper .name {
+    flex: 1;
+}
+
+.hb-item .hb-content .distance {
+    position: absolute;
+    right: 30rpx;
+    bottom: 14rpx;
+    font-size: 24rpx;
+    text-align: right;
+    color: #fff;
+}
+
+.hb-item .hb-quantity {
+    position: relative;
+    height: 60rpx;
+    font-size: 24rpx;
+    color: #625118;
+    line-height: 60rpx;
+}
+
+.hb-item .hb-quantity .received {
+    position: absolute;
+    left: 30rpx;
+    text-align: left;
+}
+
+.hb-item .hb-quantity .expiration-time {
+    position: absolute;
+    right: 30rpx;
+    text-align: right;
+}
+
+.empty-hb {
+    padding-top: 279rpx;
+}
+
+.empty-hb .bg {
+    display: block;
+    width: 180rpx;
+    height: 185.5rpx;
+    margin: 0 auto;
+}
+
+.empty-hb .remark {
+    margin-top: 70rpx;
+    font-size: 28rpx;
+    text-align: center;
+    color: #2b2b2b;
+}
+
+.empty-hb .btn-goto-send {
+    width: 220rpx;
+    height: 60rpx;
+    border-radius: 8rpx;
+    background-color: #fff;
+    border: solid 1px #ee4126;
+    margin-top: 20rpx;
+    font-size: 28rpx;
+    text-align: center;
+    color: #ee4126;
+    line-height: 60rpx;
+}
+
+.dialog {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    width: 500rpx;
+    height: 613rpx;
+    border-radius: 10rpx;
+    background-color: #f9f9f9;
+    z-index: 2000;
+}
+
+.dialog .title {
+    font-size: 34rpx;
+    font-weight: 600;
+    text-align: center;
+    color: #333839;
+    margin-top: 36rpx;
+}
+
+.dialog .desc {
+    font-size: 22rpx;
+    text-align: center;
+    color: #333839;
+    margin-top: 14rpx;
+}
+
+.dialog .content {
+    height: 353rpx;
+    width: 459rpx;
+    border-radius: 2px;
+    background-color: #fff;
+    border: solid 1px #e2e2e2;
+    margin: 22rpx auto;
+    font-size: 26rpx;
+}
+
+.dialog .action {
+    position: relative;
+    height: 87rpx;
+    text-align: center;
+    font-size: 30rpx;
+    color: #445354;
+    line-height: 87rpx;
+    border-top: 1rpx solid #e2e2e2;
+}
+
+.dialog .action .btn-cancel {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+}
+
+.dialog .action .btn-confirm {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 50%;
+}
+
+.shadow {
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1500;
+}
+
+.loading {
+    padding: 10rpx;
+    text-align: center;
+    font-size: 30rpx;
+    color: #b9b9b9;
+}
+
+.loading.complete:before {
+    display: none;
+}

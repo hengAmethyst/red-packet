@@ -1,0 +1,178 @@
+.index{
+  display: flex;
+  flex-direction: column;
+  width:100%;
+  height:100%;
+}
+.index .user{
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  width:100%;
+  height:210rpx;
+  margin-top:40rpx;
+}
+.user .user-img{
+  margin:0 auto;
+  width:128rpx;
+  height:128rpx;
+  border-radius: 100%;
+}
+.user .user-name{
+  margin:0 auto;
+  margin-top:8rpx;
+  font-weight: bold;
+  font-size:40rpx;
+  color: #2b2b2b;
+}
+
+/*积分和小金库概括  */
+.some-info{
+  display: flex;
+  width:100%;
+  height:100rpx;
+  margin-top:20rpx;
+}
+.some-info .repository{
+  position:relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width:50%;
+  height:100%;
+}
+.some-info .repository .money{
+  font-weight:bold;
+  font-size:40rpx;
+  color: #2b2b2b;
+}
+.some-info .repository .word{
+  font-size:24rpx;
+  color: #2b2b2b;
+}
+    /*  小短线  */
+.some-info .repository .space{
+  position:absolute;
+  top:0;
+  right:0;
+  transform: translateY(70%);
+  width:1rpx;
+  height:40rpx;
+  background:#979797;
+}
+.some-info .jifen{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width:50%;
+  height:100%;
+}
+.some-info .jifen .num{
+  font-weight:bold;
+  font-size:40rpx;
+  color: #2b2b2b;
+}
+.some-info .jifen .word{
+  font-size:24rpx;
+  color: #2b2b2b;
+}
+
+/* 图片按钮  */
+.pic-btn-one{
+  display: flex;
+  justify-content:space-between;
+  width:100%;
+  height:331rpx;
+  margin-top:20rpx;
+}
+.pic-btn-one .btn_1{
+  position: relative;
+  width:289rpx;
+  height:100%;
+  margin-left:50rpx;
+}
+.pic-btn-one .btn_1 image{
+  position: absolute;
+  top:0;
+  left:0;
+  width:289rpx;
+  height:100%;
+  z-index: -1;
+}
+.word_1{
+  margin-top:34rpx;
+  margin-right:40rpx;
+  font-weight: bold;
+  font-size:44rpx;
+  color: #625118;
+}
+.word_2{
+  margin-top:7rpx;
+  margin-right:40rpx;
+  font-size:24rpx;
+  color: #625118;
+}
+.btn-img{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+
+
+
+
+
+
+
+
+
+.pic-btn-one .btn_2{
+  position: relative;
+  width:289rpx;
+  height:100%;
+  margin-right:50rpx;
+}
+.pic-btn-one .btn_2 image{
+  position: absolute;
+  top:0;
+  left:0;
+  width:289rpx;
+  height:100%;
+  z-index: -1;
+}
+.pic-btn-two{
+  display: flex;
+  justify-content:space-between;
+  width:100%;
+  height:331rpx;
+  margin-top:40rpx;
+}
+.pic-btn-two .btn_3{
+  position: relative;
+  width:289rpx;
+  height:100%;
+  margin-left:50rpx;
+}
+.pic-btn-two .btn_3 image{
+  position: absolute;
+  top:0;
+  left:0;
+  width:289rpx;
+  height:100%;
+  z-index: -1;
+}
+.pic-btn-two .btn_4{
+  position: relative;
+  width:289rpx;
+  height:100%;
+  margin-right:50rpx;
+}
+.pic-btn-two .btn_4 image{
+  position: absolute;
+  top:0;
+  left:0;
+  width:289rpx;
+  height:100%;
+  z-index: -1;
+}

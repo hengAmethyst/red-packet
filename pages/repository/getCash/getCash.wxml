@@ -1,0 +1,25 @@
+
+ <import src="/common/template/wetoast/wetoast.wxml"/>
+ <template is="wetoast" data="{{...__wetoast__}}"/>
+
+<import src="/common/head/head" />
+<template is="head" />
+
+
+<!--  提现  -->
+<form bindsubmit="formSubmit">
+  <view class="get-cash">
+    <view class="input-money">
+      <view class="input-money-tip">
+        <text>请填写提现金额（最少提现10元 ）</text>
+      </view>
+      <view class="input-money-content">
+        <text>￥ </text>
+        <input name="totalAmount" type="number" placeholder="{{'请勿高于余额'+maxMoney+'元'}}" bindinput='nowInput' placeholder-style="color:#d1d1d3" value="{{}}"/>
+      </view>
+    </view>
+    <button class="submit-active" wx:if="{{ableGet}}"  formType="submit">提现</button>
+    <button class="submit-default" wx:else>提现</button>
+
+  </view>
+</form>

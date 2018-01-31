@@ -1,0 +1,20 @@
+<!--common/userCenter/userCenterCell/bountyMissionCell/bountyMissionCell.wxml-->
+<!-- <view class='bountyMissionCell-box'>
+  <view class='bountyMission-info'>
+      <image src='/img/hongbao_style.jpg'></image>
+      <text>da</text>
+  </view>
+</view> -->
+
+
+
+<view class="hb-item" bindlongpress="handleMyReceivedHbLongPress">
+  <image class="hb-bg" src="/img/hongbao_style.jpg"></image>
+  <view class="hb-content">
+    <view class="name">去完成</view>
+    <view class="price">￥2.00</view>
+  </view>
+  <view class="hb-quantity">
+    <view class="received">关注公众号</view>
+  </view>
+</view>
