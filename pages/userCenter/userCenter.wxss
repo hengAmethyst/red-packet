@@ -68,3 +68,30 @@ page{
   display: block;
   margin-top: 15rpx;
 }
+
+
+
+
+/* 电话 */
+.footer-view{
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+  bottom: 50rpx;
+}
+
+.footer-view .footer-view-title{
+  font-size: 24rpx;
+	text-align: center;
+	color: #7c7c7c;
+}
+
+.footer-view .footer-view-phone{
+  margin-top: 7rpx;
+  font-size: 24rpx;
+	text-align: center;
+	color: #cccccc;
+}

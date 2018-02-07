@@ -5,52 +5,132 @@ page {
     background-color: #f7f7f7;
 }
 
-.map-switcher {
+.btn-around {
     position: fixed;
     bottom: 100rpx;
     left: 0;
     width: 111rpx;
     height: 96rpx;
-    background-color: #ffffff;
-    border-top-right-radius: 100rpx;
-    border-bottom-right-radius: 100rpx;
-    box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.26);
-    z-index: 50;
 }
 
-.map-switcher .icon {
-    display: block;
-    width: 40rpx;
-    height: 40rpx;
-    padding-top: 15rpx;
-    margin-left: 35rpx;
+.btn-list {
+    position: fixed;
+    bottom: 100rpx;
+    right: 0;
+    width: 111rpx;
+    height: 96rpx;
 }
 
-.map-switcher .label {
-    font-size: 20rpx;
-    text-align: center;
-    color: #2b2b2b;
-    margin-top: 10rpx;
+.hide-scroll {
+    overflow: hidden;
 }
 
-.tab-content {
+.list-mode {
+    box-sizing: border-box;
     padding: 0 0 100rpx;
     position: relative;
+    height: 100%;
 }
 
-.hb-map {
-    width: 100%;
-    height: 100vh;
+.news {
+    position: absolute;
+    top: 24rpx;
+    left: 38rpx;
+    max-width: 85%;
+    height: 40rpx;
+    padding-right: 10rpx;
+    border-radius: 20rpx;
+    background-color: #000000;
+    z-index: 10;
+}
+
+.news .avatar {
     position: absolute;
     top: 0;
-    right: 0;
-    bottom: 0;
     left: 0;
+    width: 40rpx;
+    height: 40rpx;
+    background-color: #ddd;
+    border-radius: 50%;
 }
 
-.hb-list {
+.news .message {
+    padding-right: 10rpx;
+    margin-left: 50rpx;
+    line-height: 40rpx;
+    font-size: 20rpx;
+    color: #ffffff;
+    text-overflow: ellipsis;
+    /* NOTE：BOTH of the following are required for text-overflow */
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.banner {
+    position: relative;
+    width: 100%;
+    height: 450rpx;
+}
+
+.banner .bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.banner .action {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding-top: 86rpx;
+}
+
+.banner .btn-new-money {
+    width: 330rpx;
+    height: 289rpx;
+    padding-right: 7rpx;
+}
+
+.banner .btn-luck {
+    width: 330rpx;
+    height: 289rpx;
+    padding-left: 7rpx;
+}
+
+.data {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: absolute;
+    top: 375rpx;
+    left: 50%;
+    transform: translate(-50%, 0);
+    width: 690rpx;
+    height: 150rpx;
+    background: #fff;
+    border-radius: 2rpx;
+    box-shadow: 0 2rpx 16rpx 0 rgba(0, 0, 0, 0.08);
+}
+
+.data .value {
+    font-size: 40rpx;
+    font-weight: 600;
+    color: #2b2b2b;
+    text-align: center;
+}
+
+.data .label {
+    font-size: 24rpx;
+    color: #7c7c7c;
+    text-align: center;
+}
+
+.not-empty-hb {
     box-sizing: border-box;
-    padding: 10rpx 30rpx;
+    padding: 100rpx 30rpx 10rpx;
 }
 
 .hb-item {
@@ -58,7 +138,6 @@ page {
     height: 280rpx;
     box-sizing: border-box;
     margin-top: 20rpx;
-    background-color: #ffffff;
     box-shadow: inset 0 -1px 0 0 #d9d9d9;
 }
 
@@ -68,6 +147,15 @@ page {
     left: 0;
     width: 100%;
     height: 280rpx;
+    z-index: -1;
+}
+
+.hb-item .hb-status {
+    position: absolute;
+    top: 75rpx;
+    left: 100rpx;
+    width: 110rpx;
+    height: 110rpx;
 }
 
 .hb-item .hb-content {
@@ -93,7 +181,7 @@ page {
 .hb-item .hb-content .source {
     position: absolute;
     top: 39rpx;
-    right: 30rpx;
+    right: 146rpx;
     font-size: 28rpx;
     text-align: right;
     color: #ffffff;
@@ -102,11 +190,16 @@ page {
 .hb-item .hb-content .name {
     position: absolute;
     top: 79rpx;
-    right: 30rpx;
+    right: 146rpx;
+    width: 500rpx;
     font-size: 44rpx;
     font-weight: 600;
     text-align: right;
     color: #ffffff;
+    text-overflow: ellipsis;
+    /* NOTE：BOTH of the following are required for text-overflow */
+    white-space: nowrap;
+    overflow: hidden;
 }
 
 .hb-item .hb-content .distance {
@@ -116,6 +209,15 @@ page {
     font-size: 24rpx;
     text-align: right;
     color: #ffffff;
+}
+
+.hb-item .hb-content .avatar {
+    position: absolute;
+    top: 30rpx;
+    right: 30rpx;
+    width: 100rpx;
+    height: 100rpx;
+    border-radius: 50%;
 }
 
 .hb-item .hb-quantity {
@@ -169,13 +271,23 @@ page {
     line-height: 60rpx;
 }
 
+.map-mode {
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
 .hb-popover {
     position: fixed;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -260rpx);
-    width: 430rpx;
-    height: 210rpx;
+    transform: translate(-50%, -350rpx);
+    width: 600rpx;
+    height: 280rpx;
 }
 
 .hb-popover .bg {
@@ -200,8 +312,8 @@ page {
 
 .hb-popover .hb-distance {
     position: absolute;
-    top: 20rpx;
-    right: 20rpx;
+    top: 10rpx;
+    right: 135rpx;
     font-size: 24rpx;
     text-align: right;
     color: #ffffff;
@@ -209,201 +321,313 @@ page {
 
 .hb-popover .hb-subtitle {
     position: absolute;
-    top: 94rpx;
-    left: 30rpx;
-    font-size: 26rpx;
+    top: 90rpx;
+    left: 160rpx;
+    font-size: 30rpx;
     color: #ffffff;
 }
 
 .hb-popover .hb-title {
     position: absolute;
-    top: 131rpx;
-    left: 30rpx;
-    font-size: 30rpx;
+    top: 145rpx;
+    left: 160rpx;
+    width: 270rpx;
+    font-size: 44rpx;
     font-weight: 600;
     color: #ffffff;
+    text-overflow: ellipsis;
+    /* NOTE：BOTH of the following are required for text-overflow */
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.hb-popover .avatar {
+    position: absolute;
+    top: 85rpx;
+    left: 30rpx;
+    width: 110rpx;
+    height: 110rpx;
+    border-radius: 50%;
 }
 
 .hb-popover .btn-get {
     position: absolute;
-    top: 110rpx;
-    right: 20rpx;
-    width: 100rpx;
-    height: 50rpx;
-    border-radius: 30.5rpx;
-    background-color: #ffffff;
-    font-size: 26rpx;
+    top: 117rpx;
+    right: 40rpx;
     text-align: center;
     color: #ee4126;
-    line-height: 50rpx;
+    font-size: 28rpx;
+    line-height: 1.21;
+    color: #ffffff;
+}
+
+.hb-popover .not-in-scope {
+    position: absolute;
+    top: 117rpx;
+    right: 12.5rpx;
+    text-align: center;
+    color: #ee4126;
+    font-size: 28rpx;
+    line-height: 1.21;
+    color: #ffffff;
+    opacity: 0.5;
+}
+
+.hb-popover .hb-status {
+    position: absolute;
+    top: 80rpx;
+    right: 12rpx;
+    width: 110rpx;
+    height: 110rpx;
 }
 
 .shadow {
     position: fixed;
     top: 0;
     left: 0;
-    background-color: rgba(0, 0, 0, 0.5);
     width: 100%;
     height: 100%;
-    z-index: 1500;
+    z-index: 15;
 }
 
-.snatch-result {
+.ranking-list-dialog {
     position: fixed;
-    top: 0;
-    left: 50%;
-    transform: translate(-50%, 0);
+    top: 100rpx;
+    left: 0;
     width: 100%;
     height: 100%;
-    z-index: 100;
+    z-index: 20;
 }
 
-.snatch-result .result-info {
-    position: relative;
+.ranking-list-dialog>.bg {
+    position: absolute;
     top: 0;
     left: 0;
     width: 750rpx;
-    height: 936rpx;
-    z-index: 2000;
+    height: 1106rpx;
 }
 
-.snatch-result .result-info .bg {
+.ranking-list-dialog .btn-close {
+    position: absolute;
+    top: 35rpx;
+    right: 35rpx;
+    width: 36rpx;
+    height: 36rpx;
+}
+
+.ranking-list-dialog .title {
+    position: absolute;
+    top: 30rpx;
+    left: 36rpx;
+    width: 199.4rpx;
+    height: 73.6rpx;
+}
+
+.ranking-list-dialog .sub-title {
+    position: absolute;
+    top: 50rpx;
+    left: 50%;
+    transform: translate(-50%, 0);
+    font-size: 20rpx;
+    color: #ffffff;
+}
+
+.ranking-list-dialog .podium {
+    position: relative;
+    margin-top: 90rpx;
+    width: 750rpx;
+    height: 318.75rpx;
+}
+
+.podium .bg {
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
+    width: 750rpx;
+    height: 318.75rpx;
 }
 
-.snatch-result .result-info .amount-prefix {
+.podium .first.rank {
     position: absolute;
-    top: 275rpx;
-    left: 0;
-    width: 100%;
-    margin: 0 auto;
-    font-size: 24rpx;
-    text-align: center;
-    color: #625118;
-}
-
-.snatch-result .result-info .amount-info {
-    position: absolute;
-    top: 320rpx;
+    top: 0;
     left: 50%;
     transform: translate(-50%, 0);
-    text-align: center;
-    width: 268rpx;
-    height: 128rpx;
-    border-radius: 68rpx;
-    border: solid 1rpx rgba(238, 65, 38, 0.5);
+    width: 253rpx;
 }
 
-.snatch-result .result-info .amount-info .amount {
-    display: inline;
-    font-size: 100rpx;
-    font-weight: 600;
-    color: #ee4126;
-}
-
-.snatch-result .result-info .amount-info .amount-unit {
-    display: inline;
-    font-size: 24rpx;
-    color: #ee4126;
-}
-
-.snatch-result .result-info .title {
+.podium .first.rank .crown {
     position: absolute;
-    top: 520rpx;
-    left: 0;
-    width: 100%;
-    margin: 0 auto;
+    top: 10rpx;
+    left: 45rpx;
+    width: 78rpx;
+    height: 70rpx;
+    z-index: 1;
+}
+
+.podium .first.rank .avatar {
+    position: absolute;
+    top: 52rpx;
+    left: 50%;
+    transform: translate(-50%, 0);
+    width: 130rpx;
+    height: 130rpx;
+    border-radius: 50%;
+    background-color: #eee;
+}
+
+.podium .first.rank .name {
+    font-size: 28rpx;
+    text-align: center;
+    color: #ffffff;
+    margin-top: 190rpx;
+}
+
+.podium .first.rank .amount {
     font-size: 38rpx;
     font-weight: 600;
-    line-height: 1.42;
-    text-align: center;
-    color: #ffd180;
-}
-
-.snatch-result .result-info .btn-share {
-    position: absolute;
-    top: 625rpx;
-    left: 50%;
-    transform: translate(-50%, 0);
-    width: 450rpx;
-    height: 92rpx;
-    border-radius: 46rpx;
-    background-image: linear-gradient(to bottom, #feef00, #eaa900);
-    font-size: 40rpx;
-    font-weight: 600;
-    line-height: 92rpx;
-    text-align: center;
-    color: #625118;
-}
-.snatch-result .result-info cover-view.btn-share {
-    background-color: #eeea00;
-}
-
-.snatch-result .result-info .btn-share .icon-share {
-    display: inline-block;
-    width: 32rpx;
-    height: 32rpx;
-    padding-right: 20rpx;
-}
-
-.snatch-result .result-info .btn-share cover-image.icon-share {
-    margin-right: 30rpx;
-}
-
-.snatch-result .result-info .remaining {
-    position: absolute;
-    top: 740rpx;
-    left: 0;
-    width: 100%;
-    margin: 0 auto;
-    font-size: 24rpx;
-    letter-spacing: 0.8px;
     text-align: center;
     color: #ffffff;
 }
 
-.snatch-result .btn-close {
+.podium .second.rank {
     position: absolute;
-    top: 840rpx;
-    left: 50%;
-    transform: translate(-50%, 0);
-    width: 66rpx;
-    height: 66rpx;
-    z-index: 2000;
+    top: 0;
+    left: 30rpx;
+    width: 218rpx;
 }
 
-.snatch-result .result-info.received .message {
+.podium .second.rank .crown {
     position: absolute;
-    top: 280rpx;
+    top: 50rpx;
+    left: 50rpx;
+    width: 48rpx;
+    height: 43rpx;
+    z-index: 1;
+}
+
+.podium .second.rank .avatar {
+    position: absolute;
+    top: 72rpx;
     left: 50%;
     transform: translate(-50%, 0);
-    width: 308rpx;
-    font-size: 44rpx;
-    font-weight: 600;
-    line-height: 1.23;
+    width: 110rpx;
+    height: 110rpx;
+    border-radius: 50%;
+    background-color: #eee;
+}
+
+.podium .second.rank .name {
+    font-size: 22rpx;
     text-align: center;
+    color: #ffffff;
+    margin-top: 200rpx;
+}
+
+.podium .second.rank .amount {
+    font-size: 30rpx;
+    font-weight: 600;
+    text-align: center;
+    color: #ffffff;
+}
+
+.podium .third.rank {
+    position: absolute;
+    top: 0;
+    right: 30rpx;
+    width: 218rpx;
+}
+
+.podium .third.rank .crown {
+    position: absolute;
+    top: 50rpx;
+    left: 50rpx;
+    width: 48rpx;
+    height: 43rpx;
+    z-index: 1;
+}
+
+.podium .third.rank .avatar {
+    position: absolute;
+    top: 72rpx;
+    left: 50%;
+    transform: translate(-50%, 0);
+    width: 110rpx;
+    height: 110rpx;
+    border-radius: 50%;
+    background-color: #eee;
+}
+
+.podium .third.rank .name {
+    font-size: 22rpx;
+    text-align: center;
+    color: #ffffff;
+    margin-top: 200rpx;
+}
+
+.podium .third.rank .amount {
+    font-size: 30rpx;
+    font-weight: 600;
+    text-align: center;
+    color: #ffffff;
+}
+
+.ranking-list-dialog .ranking-list {
+    box-sizing: border-box;
+    padding: 0 30rpx;
+    height: calc(100% - 520rpx);
+}
+
+.ranking-list .item {
+    position: relative;
+    height: 150rpx;
+    margin-bottom: 20rpx;
+}
+
+.ranking-list .item .bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.ranking-list .rank-num {
+    position: absolute;
+    top: 46rpx;
+    left: 27rpx;
+    background-color: #ed4f55;
+    border-radius: 50%;
+    font-size: 28rpx;
+    text-align: center;
+    color: #ffffff;
+    line-height: 46rpx;
+    min-width: 46rpx;
+}
+
+.ranking-list .avatar {
+    position: absolute;
+    top: 30rpx;
+    left: 93rpx;
+    width: 90rpx;
+    height: 90rpx;
+    border-radius: 50%;
+    background-color: #eee;
+}
+
+.ranking-list .name {
+    position: absolute;
+    top: 53rpx;
+    left: 201rpx;
+    font-size: 32rpx;
     color: #2b2b2b;
-    white-space: pre-wrap;
 }
 
-.snatch-result .result-info.received .title {
+.ranking-list .amount {
     position: absolute;
-    top: 550rpx;
-    left: 50%;
-    transform: translate(-50%, 0);
-    width: 266rpx;
-    font-size: 38rpx;
+    top: 53rpx;
+    right: 27rpx;
+    font-size: 32rpx;
     font-weight: 600;
-    line-height: 1.42;
-    text-align: center;
-    color: #ffd180;
-    white-space: pre-wrap;
-}
-
-.snatch-result .result-info.received .remaining {
-    top: 700rpx;
+    text-align: right;
+    color: #e4280b;
 }

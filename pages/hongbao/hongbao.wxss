@@ -11,7 +11,6 @@
   align-items: center;
   width:100%;
   height:90rpx;
-  background:#fff;
   z-index:3001;
 }
 .festival-options .options-btn{
@@ -27,7 +26,7 @@
 .festival-options .options-btn .up-arrow{
   position:absolute;
   left:38%;
-  bottom:-46rpx;
+  bottom:-48rpx;
   width:25rpx;
   height:25rpx;
   background:#fff;
@@ -51,7 +50,6 @@
   height:0;
   background:#fff;
   z-index:3001;
-  border-top:1rpx solid #ededed; 
 }
 
 /*具体选项  */
@@ -91,19 +89,19 @@
 .swiper{
   position:relative;
   width:100%;
-  height:737rpx;
-  margin-top:80rpx;
+  height:806rpx;
+  margin-top:20rpx;
 }
 .swiper-item{
   display:flex;
   justify-content:center;
-  width:500rpx;
-  height:737rpx;
+  width:550rpx;
+  height:806rpx;
 }
 .defined{
   position:relative;
-  width:500rpx;
-  height:737rpx;
+  width:550rpx;
+  height:806rpx;
 }
 .defined .defined-word{
   position:absolute;
@@ -113,30 +111,27 @@
   font-size:38rpx;
 }
 .swiper-item image{
-  width:500rpx;
-  height:737rpx;
+  width:550rpx;
+  height:806rpx;
 }
 /*  头像和祝福语  */
 .blessing-headimg{
   position:absolute;
-  bottom:45rpx;
+  bottom:-1rpx;
   left:50%;
   transform:translate(-50%);
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
-  width:420rpx;
-  height:220rpx;
+  width:550rpx;
+  height:100rpx;
   background:#fff;
-  border-radius:6rpx;
-  opacity: 0.9;
+  opacity: 0.97;
 }
 .blessing-headimg .headimg{
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  width:100%;
-  margin-top:30rpx;
 }
 .blessing-headimg .headimg image{
   width:60rpx;
@@ -150,8 +145,8 @@
   font-size:30rpx;
 }
 .blessing-headimg .blessing{
-  margin-top:30rpx;
-  font-size:30rpx;
+  margin-right:20rpx;
+  font-size:20rpx;
   color:#282828;
 }
 /*  蒙版  */
@@ -187,5 +182,13 @@
 
 .swiper .wx-swiper-dot-active::before {
   background-color: #FFC851;
+}
+/*  当前模板页面  */
+.indicate{
+  position:fixed;
+  right:18rpx;
+  top:110rpx;
+  font-size:26rpx;
+  color: #2b2b2b;
 }
 

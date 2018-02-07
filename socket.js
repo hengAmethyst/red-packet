@@ -125,37 +125,21 @@ class SimpleSocket {
             return;
         }
 
-        // wx.request({
-        //     url: ApiUrl.index,
-        //     success: res => {
-        //         let m = (res.header['Set-Cookie'] || '').match(/(?:^|;)(JSESSIONID=.*?)(?:;|$)/)
-        //         if (m) {
-                    let options = {
-                        ...this.options,
-                        // header: {
-                        //     Cookie: m[1]
-                        // }
-                    };
-                    let task = wx.connectSocket(options);
-                    if (task) {
-                        this.task = task;
-                        this.multiTask = true;
-                        bindTaskEvent(this, this.task);
-                    } else {
-                        this.task = true;
-                        this.multiTask = false;
-                        bindGlobalEvent(this);
-                    }
+        let options = {
+            ...this.options,
+        };
+        let task = wx.connectSocket(options);
+        if (task) {
+            this.task = task;
+            this.multiTask = true;
+            bindTaskEvent(this, this.task);
+        } else {
+            this.task = true;
+            this.multiTask = false;
+            bindGlobalEvent(this);
+        }
 
-                    callback();
-        //         } else {
-        //             callback(new MyError('服务器错误', -1));
-        //         }
-        //     },
-        //     fail: err => {
-        //         callback(new MyError(err.errMsg, -2));
-        //     }
-        // })
+        callback();
     }
 
     wakeup() {
@@ -286,6 +270,14 @@ function tryWakeup(ss) {
     }
 }
 
-module.exports = new SimpleSocket({
+let ss = new SimpleSocket({
     url: ApiUrl.socket
 });
+
+ss.on('close', () => {
+    setTimeout(() => {
+        ss.wakeup();
+    }, 10 * 1000);
+});
+
+module.exports = ss;

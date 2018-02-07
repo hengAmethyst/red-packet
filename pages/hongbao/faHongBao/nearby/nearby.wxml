@@ -1,0 +1,47 @@
+<view class="person-info">
+  <!-- info  -->
+  <hongbaoInfo bindmyevent="getInfo" blessing="{{blessing}}"></hongbaoInfo>
+  <!--  地理位置  -->
+  <view class="localtion">
+    <view class="localtion-name">地理位置</view>
+    <view class="options" bindtap="chooseLocation">
+      <text>{{address}}</text>
+      <image src="/img/icon_rightArrow.png"></image>
+    </view>
+  </view>
+  <!--  范围  -->
+  <view class="scope">
+    <view class="scope-name">范围</view>
+    <view class="options" bindtap="chooseScope">
+      <text>{{scopeName}}</text>
+      <image src="/img/icon_rightArrow.png"></image>
+    </view>
+  </view>
+  <!--  手续费提示  -->
+  <view class="fee-tip">
+    附近红包将抽取20%的平台手续费,发红包即视为同意相关规则。请在个人中心-帮助查看详情
+  </view>
+  <!--  确认按钮  -->
+  <view class="submit-btn" bindtap="submitSend">
+    发红包
+  </view>
+  <view class="sure-pay" wx:if="{{showPaySure}}">
+    <view class="title">支付通知</view>
+    <view class="btns">
+      <form bindsubmit="formSubmit" class="form-1" report-submit="true">
+        <view class="way-1" bindtap="pay" data-type="1">
+          微信支付
+          <button formType="submit" plain="{{true}}" class="pay-btn"></button>
+        </view>
+      </form>
+      <form bindsubmit="formSubmit" class="form-2" report-submit="true">
+        <view class="way-2" bindtap="pay" data-type="2" wx:if="{{ableUseRepository}}">
+          小金库支付
+          <button formType="submit" plain="{{true}}" class="pay-btn"></button>
+        </view>
+        <view class="way-2" style="color:#ccc" wx:else data-type="3">小金库支付</view>
+      </form>
+    </view>
+  </view>
+  <view class="mask" wx:if="{{showPaySure}}" bindtap="cancelPay"></view> 
+</view>

@@ -1,91 +1,103 @@
-<view class="tab-content" wx:if="{{!mapVisible}}">
-    <view class="tab-item">
-        <view class="hb-list" wx:if="{{hbList.length > 0}}">
-            <block wx:for="{{hbList}}" wx:key="index">
-                <view class="hb-item" data-id="{{item.redbagId}}" bindtap="handleHbTap">
-                    <image class="hb-bg" src="/img/hongbao_style.jpg"></image>
-                    <view class="hb-content">
-                        <view class="share">{{item.redbagCategory}}</view>
-                        <view class="source">{{item.redbagType}}</view>
-                        <view class="name">{{item.redbagLongName}}</view>
-                        <view class="distance">{{item.distanceStr}}km</view>
-                    </view>
-                    <view class="hb-quantity">
-                        <view class="received">{{item.receiveCount}}/{{item.totalCount}}人已领取</view>
-                        <view class="expiration-time">{{item.expireTime}}</view>
-                    </view>
+<view class="list-mode {{rankingListVisible ? 'hide-scroll' : ''}}" wx:if="{{!mapVisible}}">
+    <view class="news" wx:if="{{advise.newsMsg}}">
+        <image class="avatar" src="{{advise.newsHeadImg}}"></image>
+        <view class="message">{{advise.newsMsg}}</view>
+    </view>
+
+    <view class="banner">
+        <image class="bg" src="/img/bg_banner.jpg"></image>
+        <view class="action">
+            <image class="btn-new-money" src="/img/btn_new_money.png" data-type="new_money" bindtap="handleShowRankingList"></image>
+            <image class="btn-luck" src="/img/btn_luck.png" data-type="luck" bindtap="handleShowRankingList"></image>
+        </view>
+    </view>
+
+    <view class="data">
+        <view>
+            <view class="value">{{advise.receivedCount}}</view>
+            <view class="label">今日抢到红包</view>
+        </view>
+        <view>
+            <view class="value">{{advise.distributedCount}}</view>
+            <view class="label">今日红包总数</view>
+        </view>
+        <view>
+            <view class="value">{{advise.myFortuneRank}}</view>
+            <view class="label">我的今日排名</view>
+        </view>
+    </view>
+
+    <view class="not-empty-hb" wx:if="{{hbList.length > 0}}">
+        <block wx:for="{{hbList}}" wx:key="index">
+            <view class="hb-item" data-id="{{item.redbagId}}" catchtap="handleHbTap">
+                <image class="hb-bg" src="/img/hongbao_style.jpg"></image>
+                <image class="hb-status" wx:if="{{item.receivedByMe == 1}}" src="/img/icon_received.png"></image>
+                <view class="hb-content">
+                    <view class="share">{{item.redbagCategory}}</view>
+                    <view class="source">{{item.redbagType}}</view>
+                    <view class="name">{{item.redbagLongName}}</view>
+                    <view class="distance">{{item.distanceStr}}km</view>
+                    <image class="avatar" src="{{item.cardRedBagStyle.logo}}"></image>
                 </view>
-            </block>
-        </view>
-        <view class="empty-hb empty-received-hb" wx:else>
-            <image class="bg" src="/img/pic_space.png"></image>
-            <view class="remark">当前没有优惠或红包</view>
-        </view>
+                <view class="hb-quantity">
+                    <view class="received">{{item.receiveCount}}/{{item.totalCount}}人已领取</view>
+                    <view class="expiration-time">{{item.expireTime}}</view>
+                </view>
+            </view>
+        </block>
+    </view>
+    <view class="empty-hb empty-received-hb" wx:else>
+        <image class="bg" src="/img/pic_space.png"></image>
+        <view class="remark">当前没有优惠或红包</view>
     </view>
 </view>
 
-<view class="map-switcher" hidden="{{mapVisible}}" bindtap="handleTogglehMap">
-    <image class="icon" src="/img/icon_map_mode.png"></image>
-    <view class="label">地图</view>
+<image class="btn-around" hidden="{{mapVisible}}" src="/img/btn_around.png" bindtap="handleToggleMap"></image>
+
+<view class="shadow" wx:if="{{rankingListVisible}}" capture-catch:touchmove="true"></view>
+<view wx:if="{{rankingListVisible}}" class="ranking-list-dialog" animation="{{dialogAnimation}}" catchtouchmove="true">
+    <!-- <image class="bg" src="/img/bg_ranking_list.png"></image> -->
+    <image class="bg" src="http://img1.jinghanit.com/group1/M00/00/F6/ag8ollp1dNuAWCcwAAsZmS221Ek187.png"></image>
+    <image class="btn-close" src="/img/btn_close_ranking_list.png" bindtap="handleCloseDialog"></image>
+    <image class="title" wx:if="{{rankType === 1}}" src="/img/icon_new_money.png"></image>
+    <image class="title" wx:else src="/img/icon_luck.png"></image>
+    <view class="sub-title">{{rankDate}}{{rankType === 1 ? '发出红包' : '抢到红包'}}</view>
+    <view class="podium">
+        <image class="bg" src="/img/bg_podium.png"></image>
+        <view class="rank second">
+            <image class="crown" src="/img/icon_crown_2.png"></image>
+            <image class="avatar" src="{{topThree.second.headImageUrl}}"></image>
+            <view class="name">{{topThree.second.nickName}}</view>
+            <view class="amount">{{topThree.second.value}}</view>
+        </view>
+        <view class="rank first">
+            <image class="crown" src="/img/icon_crown_1.png"></image>
+            <image class="avatar" src="{{topThree.first.headImageUrl}}"></image>
+            <view class="name">{{topThree.first.nickName}}</view>
+            <view class="amount">{{topThree.first.value}}</view>
+        </view>
+        <view class="rank third">
+            <image class="crown" src="/img/icon_crown_3.png"></image>
+            <image class="avatar" src="{{topThree.third.headImageUrl}}"></image>
+            <view class="name">{{topThree.third.nickName}}</view>
+            <view class="amount">{{topThree.third.value}}</view>
+        </view>
+    </view>
+    <scroll-view class="ranking-list" scroll-y>
+        <view wx:for="{{rankingList}}" wx:key="index" class="item">
+            <image class="bg" src="/img/bg_ranking_item.png"></image>
+            <view class="rank-num">{{index + 4}}</view>
+            <image class="avatar" src="{{item.headImageUrl}}"></image>
+            <view class="name">{{item.nickName}}</view>
+            <view class="amount">{{item.value}}</view>
+        </view>
+    </scroll-view>
 </view>
 
-<view class="snatch-result" catchtouchmove="true" hidden="{{mapVisible || !snatchVisible}}">
-    <view class="shadow"></view>
-    <view wx:if="{{snatchInfo.status == 0}}" class="result-info" animation="{{snatchAnimation}}">
-        <image class="bg" src="/img/icon_open_style_1.png"></image>
-        <view class="amount-prefix">恭喜您获得</view>
-        <view class="amount-info">
-            <view class="amount">{{snatchInfo.amount}}</view>
-            <view class="amount-unit">元</view>
-        </view>
-        <view class="title">{{snatchInfo.title}}</view>
-        <view class="btn-share" data-id="{{snatchInfo.redbagId}}" bindtap="handleSnatchShare">
-            <image class="icon-share" src="/img/icon_share.png"></image>快让朋友来领
-        </view>
-        <view class="remaining">还剩{{snatchInfo.remaining}}份没人领</view>
-        <image class="btn-close" bindtap="handleSnatchClose" src="/img/icon_cloose_btn.png"></image>
-    </view>
-    <view wx:else class="result-info received" animation="{{snatchAnimation}}">
-        <image class="bg" src="/img/icon_open_style_2.png"></image>
-        <view class="message">{{snatchInfo.message}}</view>
-        <view class="title">{{snatchInfo.title}}</view>
-        <view class="remaining">还剩{{snatchInfo.remaining}}份</view>
-        <image class="btn-close" bindtap="handleSnatchClose" src="/img/icon_cloose_btn.png"></image>
-    </view>
-</view>
-
-<map id="hb-map" class="hb-map" wx:if="{{mapVisible}}" show-location longitude="{{coi.longitude}}" latitude="{{coi.latitude}}"
+<map id="map-mode" class="map-mode" wx:if="{{mapVisible}}" show-location longitude="{{coi.longitude}}" latitude="{{coi.latitude}}"
     markers="{{markers}}" circles="{{circles}}" include-points="{{includePoints}}" bindtap="handleMapTap" bindmarkertap="handleMapMarkerTap"
     bindregionchange="handleMapRegionChange">
-    <cover-view class="map-switcher" bindtap="handleTogglehMap">
-        <cover-image class="icon" src="/img/icon_list_mode.png"></cover-image>
-        <cover-view class="label">列表</cover-view>
-    </cover-view>
-
-    <cover-view class="snatch-result" catchtouchmove="true" hidden="{{!mapVisible || !snatchVisible}}">
-        <cover-view class="shadow"></cover-view>
-        <cover-view hidden="{{snatchInfo.status !== 0}}" class="result-info" animation="{{snatchAnimation}}">
-            <cover-image class="bg" src="/img/icon_open_style_1.png"></cover-image>
-            <cover-view class="amount-prefix">恭喜您获得</cover-view>
-            <cover-view class="amount-info">
-                <cover-view class="amount">{{snatchInfo.amount}}</cover-view>
-                <cover-view class="amount-unit">元</cover-view>
-            </cover-view>
-            <cover-view class="title">{{snatchInfo.title}}</cover-view>
-            <cover-view class="btn-share" data-id="{{snatchInfo.redbagId}}" bindtap="handleSnatchShare">
-                <cover-image class="icon-share" src="/img/icon_share.png"></cover-image>快让朋友来领
-            </cover-view>
-            <cover-view class="remaining">还剩{{snatchInfo.remaining}}份没人领</cover-view>
-            <cover-image class="btn-close" bindtap="handleSnatchClose" src="/img/icon_cloose_btn.png"></cover-image>
-        </cover-view>
-        <cover-view hidden="{{snatchInfo.status === 0}}" class="result-info received" animation="{{snatchAnimation}}">
-            <cover-image class="bg" src="/img/icon_open_style_2.png"></cover-image>
-            <cover-view class="message">{{snatchInfo.message}}</cover-view>
-            <cover-view class="title">{{snatchInfo.title}}</cover-view>
-            <cover-view class="remaining">还剩{{snatchInfo.remaining}}份</cover-view>
-            <cover-image class="btn-close" bindtap="handleSnatchClose" src="/img/icon_cloose_btn.png"></cover-image>
-        </cover-view>
-    </cover-view>
+    <cover-image class="btn-list" src="/img/btn_list.png" bindtap="handleToggleMap"></cover-image>
 
     <cover-view class="hb-popover" hidden="{{!popoverVisible}}">
         <cover-image class="bg" src="/img/bg_popover.png"></cover-image>
@@ -93,6 +105,9 @@
         <cover-view class="hb-distance">{{popover.distanceStr}}km</cover-view>
         <cover-view class="hb-subtitle">{{popover.redbagType}}</cover-view>
         <cover-view class="hb-title">{{popover.redbagName}}</cover-view>
-        <cover-view class="btn-get" data-id="{{popover.redbagId}}" bindtap="handleHbTap">领取</cover-view>
+        <cover-image class="avatar" src="{{popover.cardRedBagStyle.logo}}"></cover-image>
+        <cover-image class="hb-status" wx:if="{{popover.receivedByMe === 1}}" src="/img/icon_received.png"></cover-image>
+        <cover-view class="btn-get" wx:if="{{popover.inScope && popover.receivedByMe !== 1 && !popover.isSentByMe}}" data-id="{{popover.redbagId}}" bindtap="handleHbTap">领取</cover-view>
+        <cover-view class="not-in-scope" wx:if="{{!popover.inScope && popover.receivedByMe !== 1}}">不在范围</cover-view>
     </cover-view>
 </map>

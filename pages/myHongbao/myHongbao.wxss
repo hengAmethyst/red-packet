@@ -161,6 +161,9 @@ page {
 
 .hb-item .hb-content .name-wrapper .name {
     flex: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
 .hb-item .hb-content .distance {

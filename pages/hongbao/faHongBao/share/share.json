@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "分享红包",
+  "usingComponents": {
+    "hongbaoInfo": "/common/hongbaoInfo/hongbaoInfo"
+  }
+}

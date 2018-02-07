@@ -9,8 +9,8 @@
 	},
 	"compileType": "miniprogram",
 	"libVersion": "1.9.1",
-	"appid": "wx59696bb01a615568",
-	"projectname": "redEnvelope",
+	"appid": "wx5703b0a726207414",
+	"projectname": "%E6%96%B0%E4%B9%90%E6%B1%87%E5%BC%80%E9%97%A8%E7%BA%A2",
 	"condition": {
 		"search": {
 			"current": -1,
@@ -100,10 +100,10 @@
 					"query": ""
 				},
 				{
-					"id": -1,
+					"id": 12,
 					"name": "个人红包详情页",
 					"pathName": "pages/personHongbaoDetail/personHongbaoDetail",
-					"query": ""
+					"query": "type=receive&id=1ce502d591544e3e9037e76c6763e60d"
 				},
 				{
 					"id": -1,
@@ -121,6 +121,24 @@
 					"id": -1,
 					"name": "投诉建议",
 					"pathName": "pages/userCenter/suggestions/suggestions",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "发红包高级设置",
+					"pathName": "pages/hongbao/faHongBao/advancedSet/advancedSet",
+					"query": ""
+				},
+				{
+					"id": 17,
+					"name": "附近红包",
+					"pathName": "pages/hongbao/faHongBao/nearby/nearby",
+					"query": ""
+				},
+				{
+					"id": 18,
+					"name": "分享红包",
+					"pathName": "pages/hongbao/faHongBao/share/share",
 					"query": ""
 				}
 			]

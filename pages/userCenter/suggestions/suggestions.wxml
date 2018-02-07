@@ -32,7 +32,7 @@
         <text class='title'>请描述您的投诉和建议</text>
       </view>
 
-      <textarea name="content" class='input-textarea' placeholder-class="input-placeholder" placeholder="请简要说明你的能力或工作经历" bindinput='personalDescInputClick' maxlength="200" placeholder-style="color:#d1d1d3" value="{{personalDesc}}"></textarea>
+      <textarea name="content" class='input-textarea' placeholder-class="input-placeholder" placeholder="请填写您的投诉和建议" bindinput='personalDescInputClick' maxlength="200" placeholder-style="color:#d1d1d3" value="{{personalDesc}}"></textarea>
       <text class='input-number'>{{personalDescLength+ "/" + "200"}}</text>
     </view>
 

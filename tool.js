@@ -167,7 +167,7 @@ export function login() {
             nickName: userInfo.nickName,
             sex: userInfo.gender,
             province: userInfo.province,
-            headImgurl: userInfo.avatarUrl,
+            headImgUrl: userInfo.avatarUrl,
             city: userInfo.city,
             country: userInfo.country,
             encryptedData: res[1].encryptedData,
@@ -200,6 +200,7 @@ export function login() {
 export function getLocation() {
     let options = {
         fn: 'getLocation',
+        params: { type: 'gcj02' },
         confirm: {
             title: '微信授权',
             content: '新乐汇卡券包需要获取你的位置信息',
@@ -222,12 +223,53 @@ export function chooseLocation() {
     return ensureAuth(options);
 }
 
-export function formatMoeny(money) {
+export function formatMoeny(money, digits = 2) {
     let num = parseInt(money);
-    return (num / 100).toFixed(2);
+    if (digits < 0) {
+        if (num % 10 > 0) {
+            digits = 2;
+        } else if (num % 100 > 0) {
+            digits = 1;
+        } else {
+            digits = 0;
+        }
+    }
+    return (num / 100).toFixed(digits);
 }
 
-export function formatDistance(num) {
-    let n = parseInt(num);
-    return (n / 1000).toFixed(2);
+export function formatDistance(distance, digits = 2) {
+    let num = Math.round(parseInt(distance) / 10);
+    if (digits < 0) {
+        if (num % 10 > 0) {
+            digits = 2;
+        } else if (num % 100 > 0) {
+            digits = 1;
+        } else {
+            digits = 0;
+        }
+    }
+    return (num / 100).toFixed(digits);
+}
+
+/**
+ * 封禁无限回调
+ */
+export function disabledCallBack() {
+    wx.showModal({
+        title: '账号封禁',
+        content: '您的账号涉嫌违规/作弊/其他原因被封禁，若申诉请联系客服：400-6858-188进行处理',
+        confirmText: '确 定',
+        confirmColor: '#ee4126',
+        showCancel: false,
+        success: (res) => {
+            if (res.confirm) {
+                // wx.makePhoneCall({
+                //     phoneNumber: '4006858188'
+                // })
+                disabledCallBack();
+            } else {
+                wx.navigateBack();
+            }
+        }
+    })
 }

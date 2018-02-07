@@ -12,7 +12,7 @@
       <!-- hongbao_big.jpg    icon_open_style_2.png-->
       <image src='/img/icon_open_style_2.png'></image>
       <text class='title'>您已经领过啦！\n不要贪心喔！</text>
-      <text class="info">橙子发的红包橙子发的红包橙子发的红包橙子发的红包橙子发的红包橙子发的红包橙子发的红包橙子发的红包橙子发的红包橙子发的红包橙子发的红包橙子发的红包</text>
+      <text class="info">橙子发的红包橙子红包</text>
       <text class='remaining'>还剩98份</text>
     </view>
     <image class='cloose-button' src='/img/icon_cloose_btn.png' bindtap='clooseBtnClick'></image>

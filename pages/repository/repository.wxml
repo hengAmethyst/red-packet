@@ -14,13 +14,13 @@
     <!-- 余额 -->
     <view class="repository-title">
       <view class="left-title">余额</view>
-      <view class="left-money">￥{{remainAmount/100}}</view>
+      <view class="left-money">￥{{remainAmountYuan}}</view>
       <image class='getCash-image' src='/img/icon_tixian.png' bindtap='goCash'></image>
     </view>
     <!--日期选择  -->
     <view class="date-option">
       <image class="left" src="/img/icon_left.png" bindtap="preDate" />
-      <picker class="date-picker" mode="date" value="{{nowChoosedDate}}" start="2015-09-01" end="{{todayDate}}" bindchange="bindDateChange">
+      <picker class="date-picker" mode="date" value="{{nowChoosedDate}}" start="2018-01-01" end="{{todayDate}}" bindchange="bindDateChange">
         {{nowChoosedDate}}
       </picker>
       <image class="right" src="/img/icon_right.png" bindtap="nextDate" />

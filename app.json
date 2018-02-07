@@ -14,9 +14,11 @@
     "pages/myHongbao/myHongbao",
     "pages/personHongbaoDetail/personHongbaoDetail",
     "pages/hongbao/faHongBao/faHongBao",
-    "pages/hongbao/faHongBao/personInfo/personInfo",
-    "pages/hongbao/faHongBao/advancedSet/advancedSet",
-    "pages/userCenter/suggestions/suggestions"
+    "pages/hongbao/faHongBao/nearby/nearby",
+    "pages/hongbao/faHongBao/share/share",
+    "pages/userCenter/suggestions/suggestions",
+    "pages/userCenter/moreSmallApplet/moreSmallApplet",
+    "pages/userCenter/webView/webView"
   ],
   "window": {
     "backgroundTextStyle": "light",

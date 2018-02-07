@@ -11,13 +11,17 @@
   <view class="get-cash">
     <view class="input-money">
       <view class="input-money-tip">
-        <text>请填写提现金额（最少提现10元 ）</text>
+        <text class='title'>请填写提现金额</text>
+        <text class='tip'>每次最少提现10元 每人每天最大提现金额为200元</text>
+        <text class='tip'>每次提现需收取6%手续费</text>
       </view>
       <view class="input-money-content">
         <text>￥ </text>
-        <input name="totalAmount" type="number" placeholder="{{'请勿高于余额'+maxMoney+'元'}}" bindinput='nowInput' placeholder-style="color:#d1d1d3" value="{{}}"/>
+        <input name="totalAmount" type="digit" placeholder="{{'请勿高于余额'+maxMoney+'元'}}" bindinput='nowInput' maxlength='10' placeholder-style="color:#d1d1d3" value="{{}}" /> 
       </view>
     </view>
+     <text class='handicap-cost-text'>本次提现手续费为:￥{{handicapCost}}元   实际到账金额为:￥{{datedAmount}}</text> 
+
     <button class="submit-active" wx:if="{{ableGet}}"  formType="submit">提现</button>
     <button class="submit-default" wx:else>提现</button>
 

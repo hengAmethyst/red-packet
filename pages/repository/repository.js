@@ -17,13 +17,17 @@ Page({
     totalResult: 20,//数据总数
     isLoading: false,
     loadMoreTip: "上拉加载更多数据",
+    remainAmountYuan:0,
   },
-
+  
 
   onLoad: function (options) {
     new getApp().WeToast();
     
     let remainAmount = options.remainAmount
+
+    let remainAmountYuan = remainAmount/100;
+    remainAmountYuan = remainAmountYuan.toFixed(2)
 
     this.dateFormat()
     let temp = new Date().Format("yyyy-MM-dd")
@@ -34,7 +38,8 @@ Page({
       nowChoosedDate: temp,
       date: tempDay,
       remainAmount: remainAmount,
-      todayDate: temp
+      todayDate: temp,
+      remainAmountYuan: remainAmountYuan
     })
 
     this.getTradeListHttpRequest();
@@ -161,7 +166,11 @@ Page({
     }
 
     if (this.data.totalResult > this.data.dataArr.length) {
-      this.data.page = this.data.page + 1;
+      if(this.data.dataArr.length > 0){
+        this.data.page = this.data.page + 1;
+      }else{
+        this.data.page = 1;
+      }
 
       //上拉加载
       this.getTradeListHttpRequest();
@@ -248,13 +257,17 @@ Page({
       this.dateFormat()
       let temp = new Date().Format("yyyy-MM-dd")
 
+      let remainAmountYuan = remainAmount / 100;
+      remainAmountYuan = remainAmountYuan.toFixed(2)
+
       console.log("今天是：", temp);
       let tempDay = new Date()
       this.setData({
         nowChoosedDate: temp,
         date: tempDay,
         remainAmount: remainAmount,
-        todayDate: temp
+        todayDate: temp,
+        remainAmountYuan: remainAmountYuan
       })
 
       this.getTradeListHttpRequest();

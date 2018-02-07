@@ -1,0 +1,18 @@
+<!--pages/userCenter/moreSmallApplet/moreSmallApplet.wxml-->
+
+<import src="/common/head/head" />
+<template is="head" />
+
+<view class='moreSmallApplet-box'>
+  <view class='moreSmallApplet-cell' wx:for="{{dataArr}}" wx:key="item" bindtap='cellClick' data-appid='{{item.appid}}'>
+    <image src='{{item.icon}}'></image> 
+    <text class='title'>{{item.title}}</text>
+    <text class='info'>{{item.info}}</text>
+  </view>
+
+  <view class='footer-view' bindtap='footerClick'>
+    <text>专业小程序开发定制</text>
+    <text>400-6858-188</text>
+  </view>
+
+</view>

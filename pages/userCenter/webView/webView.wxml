@@ -1,0 +1,6 @@
+<!--pages/company/WebView/webView.wxml-->
+
+<import src="/common/head/head" />
+<template is="head" />
+
+<web-view src="https://help.jinghanit.com/#/redBagHelp"></web-view>

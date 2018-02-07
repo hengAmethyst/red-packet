@@ -1,0 +1,68 @@
+/* pages/userCenter/moreSmallApplet/moreSmallApplet.wxss */
+page{
+  background-color: rgb(247, 247, 247);
+}
+
+.moreSmallApplet-box{
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.moreSmallApplet-cell{
+   position: relative; 
+  margin-left: 30rpx;
+  margin-right: 30rpx;
+	height: 280rpx;
+	border-radius: 10rpx;
+   /* background-color: red;  */
+  margin-top: 30rpx;
+  padding: 40rpx;
+  flex-direction: column;
+  display: flex;
+
+}
+
+.moreSmallApplet-cell image{
+  position: absolute;
+  top: 0rpx;
+  left: 0rpx;
+  right: 0rpx;
+	height: 100%;
+  width: 100%;
+  z-index: -1;
+}
+
+.moreSmallApplet-cell .title{
+  font-size: 60rpx;
+	font-weight: 600;
+	text-align: left;
+	color: #ffffff;
+}
+
+.moreSmallApplet-cell .info{
+  margin-top: 20rpx;
+  opacity: 0.9;
+	font-family: PingFangSC;
+	font-size: 28rpx;
+	text-align: left;
+	color: #ffffff;
+}
+
+
+.footer-view{
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+  bottom: 50rpx;
+}
+
+
+.footer-view text{
+  font-size: 24rpx;
+	text-align: center;
+	color: #cccccc;
+}

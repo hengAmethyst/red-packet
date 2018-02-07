@@ -21,9 +21,9 @@
                             <view class="source">{{item.redType?item.redType:'贺卡红包'}}</view>
                             <view class="name-wrapper">
                                 <view class="amount">￥{{item.myReciveMoney}}</view>
-                                <view class="name">{{item.sorceInfo}}的{{item.redType?item.redType:'贺卡红包'}}</view>
+                                <view class="name">{{item.sorceInfo}}</view>
                             </view>
-                            <view class="distance">{{item.distance}}KM</view>
+                            <view class="distance" wx:if="{{item.distance}}">{{item.distance}}KM</view>
                         </view>
                     </view>
                 </block>
@@ -46,7 +46,7 @@
                         <view class="hb-content">
                             <view class="share">{{item.categoryName}}</view>
                             <view class="source">{{item.redType?item.redType:'贺卡红包'}}</view>
-                            <view class="name">{{item.sorceInfo}}的{{item.redType?item.redType:'贺卡红包'}}</view>
+                            <view class="name">{{item.sorceInfo}}</view>
 
                         </view>
                         <view class="hb-quantity">

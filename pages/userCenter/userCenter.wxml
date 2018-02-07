@@ -13,7 +13,13 @@
   <!-- 选择项 -->
   <view class='setting-view'>
     <block wx:for="{{dataArr}}" wx:key="item">
-      <userCenterCell class="{{index == 0?'setting-view-tow':''}}" info="{{item}}" bind:userCenterCellClick="userCenterCellClick"></userCenterCell>
+      <userCenterCell class="{{index == 0 || index == 1?'setting-view-tow':''}}" info="{{item}}" bind:userCenterCellClick="userCenterCellClick"></userCenterCell>
     </block>
+  </view>
+
+
+  <view class='footer-view' bindtap='footerClick'>
+    <text class='footer-view-title'>新乐汇钱多多V1.1</text>
+    <text class='footer-view-phone'>专业小程序开发定制 400-6858-188</text>
   </view>
 </view>

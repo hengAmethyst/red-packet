@@ -1,0 +1,61 @@
+<!--  发红包高级设置  -->
+<view class="share">
+  <view style="width:100%;height:1rpx;background:#f9f9f9;"></view>
+  <!-- info  -->
+  <hongbaoInfo bindmyevent="getInfo"></hongbaoInfo>
+  <!--  赏金  -->
+  <view class="money-reward">
+    <view class="per-sum-name">每份红包额外增加赏金</view>
+    <view class="per-sum-input">
+      <input type="digit" align="right" value="{{reward}}" placeholder='输入金额' maxlength='3' bindinput='rewardMoney' bindinput="rewardMoney" ></input>
+      <text>元</text>
+    </view>
+  </view>
+  <!--  tip-1  -->
+  <view class="tip-1">
+    如果用户分享了您的红包，且该分享的红包被领取，则该用户除了红包外会获得额外赏金，在红包领完后未被使用的赏金将退回到您的小金库中，赏金的用法和规则详情在个人中心-帮助中心查看。
+  </view>
+  <!--  tip-2  -->
+  <view class="tip-2">
+    分享红包金额为红包金额加赏金金额，如启用赏金功能，将抽取额外的20%的平台手续费，发红包即视为同意相关规则。请在个人中心-帮助查看详情
+  </view>
+  <!--  托管赏金金额  -->
+  <view class="money-reward-all">
+    本次托管赏金为{{rewardAll}}元
+  </view>
+  <!--  发红包按钮  -->
+  <view class="submit-btn" bindtap="submitSend">
+    发红包
+  </view>
+  <!--  支付  -->
+  <view class="sure-pay" wx:if="{{showPaySure}}">
+    <view class="title">支付通知</view>
+    <view class="btns">
+      <form bindsubmit="formSubmit" class="form-1" report-submit="true">
+        <view class="way-1" bindtap="pay" data-type="1">
+          微信支付
+          <button formType="submit" plain="{{true}}" class="pay-btn"></button>
+        </view>
+      </form>
+      <form bindsubmit="formSubmit" class="form-2" report-submit="true">
+        <view class="way-2" bindtap="pay" data-type="2" wx:if="{{ableUseRepository}}">
+          小金库支付
+          <button formType="submit" plain="{{true}}" class="pay-btn"></button>
+        </view>
+        <view class="way-2" style="color:#ccc" wx:else data-type="3">小金库支付</view>
+      </form>
+    </view>
+  </view>
+  <view class="mask" wx:if="{{showPaySure}}" bindtap="cancelPay"></view>
+  <!--  分享  -->
+  <view class="share-btn" wx:if="{{showShareBtn}}">
+    <view class="title">红包已经准备好了</view>
+    <view class="content">
+      点击去分享,分享给微信好友
+    </view>
+    <button open-type="share">
+    去分享
+    </button>
+  </view>
+   <view class="mask" wx:if="{{showPaySure|showSendWay|showShareBtn}}" bindtap="cancelPay"></view> 
+</view>

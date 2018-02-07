@@ -27,7 +27,15 @@ Page({
     new getApp().WeToast()
     console.log(options)
 
-    this.data.id = options.id;
+
+    if(options.id){
+      this.data.id = options.id;
+    }else{
+      wx.setNavigationBarTitle({
+        title: "意见建议",
+      })
+    }
+    
   },
 
   showFestivalList() {
@@ -154,7 +162,15 @@ Page({
         let temp = {};
         temp.isTurnView = 0;
         temp.url = data.data.fullFilename;
-        picList.push(temp);
+
+
+        if (picList.length < 3){
+          picList.push(temp);
+        }else {
+          return;
+        }
+
+       
         that.setData({
           picList: picList
         })
@@ -219,7 +235,7 @@ Page({
 
     let param = e.detail.value;
     param["redbagId"] = this.data.id;
-    param["type"] = 0;
+    param["type"] = this.data.id.length > 0?0:1;//0 投诉红包   1建议
     param["picList"] = imageArr;
 
     this.submitSuggestionHttpRequest(param)
@@ -234,10 +250,14 @@ Page({
 
     tool.request(apiUrl.redbag.complainAfterReceiveRedbag, getApp().globalData.nowToken, param, getApp().globalData.unionId).then(data => {
       wx.hideLoading();
+
       wx.showModal({
         title: '投诉成功',
         content: '感谢您的投诉，我们将会尽快解决您的问题',
-        success: function (res) {
+        confirmText: '确定',
+        confirmColor: '#ee4126',
+        showCancel: false,
+        success: (res) => {
           wx.navigateBack({
 
           })

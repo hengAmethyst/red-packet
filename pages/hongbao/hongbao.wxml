@@ -1,7 +1,7 @@
-<view class="hongbao">
+<view class="hongbao" catchtouchmove="true">
   <view style="width:100%;height:1rpx;background:#ccc;opacity:0.8;"></view>
   <!--  选项按钮  -->
-  <view class="festival-options">
+  <view class="festival-options" style="{{showMark?'background:#fff;border-bottom:1rpx solid #d9d9d9;z-index:4000':'background:none;border-bottom:1rpx solid transparent'}}">
     <view class="options-btn" bindtap="showFestivalList">
       <text>{{nowFestival}}</text>
       <image src="/img/icon_down_arrow.png"></image>
@@ -15,14 +15,14 @@
     </view>
   </scroll-view>
   <!-- swiper选择模板  -->
-  <swiper class="swiper" indicator-dots="{{true}}" indicator-color="rgba(255, 255, 255,0.2)" indicator-active-color="rgba(255, 255, 255,1)" duration="300" bindchange="nowSwiper" current="{{1}}">
+  <swiper class="swiper" indicator-dots="{{false}}" indicator-color="rgba(255, 255, 255,0.2)" indicator-active-color="rgba(255, 255, 255,1)" duration="300" bindchange="nowSwiper" current="{{nowCurrentIndex}}">
     <!--  自定义模板  -->
-    <swiper-item class="swiper-item defined">
+    <swiper-item class="swiper-item defined" wx:if="{{nowFesIndex==0}}">
       <image src="{{bgImg}}" class="slide-image" bindtap="uploadBg"/>
       <view class="defined-word" wx:if="{{showDefinedWord}}">自定义模板</view>
     </swiper-item>
     <!--  普通模板  -->
-    <swiper-item class="swiper-item" wx:for="{{typeList}}">
+    <swiper-item class="swiper-item" wx:for="{{typeList}}" wx:if="{{nowFesIndex!=0}}">
       <image src="{{item.url}}" class="slide-image"/>
       <!--  头像和祝福语  -->
       <view class="blessing-headimg">
@@ -40,6 +40,9 @@
   <view class="use-btn" bindtap = "gotoOtherPage">
     使用
   </view>
+  <view class="indicate">
+    {{swiperIndex+1}}/{{typeList.length}}
+  </view>
   <!--  蒙版  -->
-  <view class="mark" wx:if="{{showMark}}"></view>
+  <view class="mark" wx:if="{{showMark}}" bindtap="showFestivalList"></view>
 </view>

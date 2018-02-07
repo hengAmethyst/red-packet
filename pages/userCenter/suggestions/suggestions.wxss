@@ -24,7 +24,7 @@ page {
 
 .festival-options .options-btn {
   position: relative;
-  display: flex;
+  display: flex; 
   justify-content: center;
   align-items: center;
 }

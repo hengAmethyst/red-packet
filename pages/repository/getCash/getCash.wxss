@@ -9,19 +9,28 @@ page{
 }
 .input-money{
   width:100%;
-  height:230rpx;
+  height:300rpx;
   box-shadow: inset 0 -1rpx 0 0 #d9d9d9;
   background:#fff;
 }
 .input-money .input-money-tip{
+  display: flex;
   width:100%;
   padding-top: 30rpx;
+  flex-direction: column;
 }
-.input-money .input-money-tip text{
+.input-money .input-money-tip .title{
   margin-left:30rpx;
   font-size:26rpx;
   color: #2b2b2b;
 }
+.input-money .input-money-tip .tip{
+  margin-top: 5rpx;
+  margin-left:30rpx;
+  font-size:25rpx;
+  color: rgb(160, 160, 160);
+}
+
 .input-money .input-money-content{
   display: flex;
   align-items: center;
@@ -40,6 +49,17 @@ page{
   padding-left:20rpx;
   padding-right: 10rpx;
   font-size: 50rpx;
+}
+
+
+/* 手续费 */
+.handicap-cost-text{
+  display: flex;
+  margin-top: 20rpx;
+  margin-left: 30rpx;
+  margin-right: 30rpx;
+  font-size:26rpx;
+  color: #2b2b2b;
 }
 
 

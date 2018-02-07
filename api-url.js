@@ -1,10 +1,11 @@
 // const ENV = 'dev';
-const ENV = 'test';
-// const ENV = 'prod';
+// const ENV = 'test';
+const ENV = 'prod';
 
 let baseUrl = {
     wallet: {
         dev: 'http://192.168.2.6:9101/xcx-wallet',
+        // test: 'http://192.168.2.132:9081/xcx-wallet',
         test: 'http://192.168.2.143:9101/xcx-wallet',
         prod: 'https://wallet.jinghanit.com/xcx-wallet'
     },
@@ -15,13 +16,13 @@ let baseUrl = {
     },
     payment: {
         dev: 'http://192.168.2.6:9089/jinghan-payment/api/wx/wxUnifiedOrder',
-        test: 'http://192.168.2.6:9089/jinghan-payment/api/wx/wxUnifiedOrder',
-        prod: 'http://192.168.2.6:9089/jinghan-payment/api/wx/wxUnifiedOrder'
+        test: 'http://192.168.2.143:9089/jinghan-payment/api/wx/wxUnifiedOrder',
+        prod: 'https://payxcx.jinghanit.com/jinghan-payment/api/wx/wxUnifiedOrder'
     },
     websocket: {
         dev: 'ws://192.168.2.6:9101/xcx-wallet/websocket',
         test: 'ws://192.168.2.143:9101/xcx-wallet/websocket',
-        prod: 'ws://wallet.jinghanit.com/xcx-wallet/websocket'
+        prod: 'wss://wallet.jinghanit.com/xcx-wallet/websocket'
     },
     uploadUrl: {//上传图片
         dev: 'https://file.jinghanit.com/jinghan-fastdfs/fdfs/upload.shtml',
@@ -49,6 +50,7 @@ export default {
     file: b('fastdfs') + '/fdfs/upload.shtml',
     user: {
         login: b('wallet') + '/api/user/v2/skip/login',
+        validate: b('wallet') + '/api/redbag/v2/validateRedbagAndUser'
     },
     redbag: {
         leaveWordAfterReceiveRedbag: b('wallet') + '/api/redbag/v2/leaveWordAfterReceiveRedbag',
@@ -58,7 +60,11 @@ export default {
         template: b('wallet') + '/api/blessTemplate/v2/templateList',
         payInfo: b('wallet') + '/api/redbag/v2/payInfo',
         complainAfterReceiveRedbag: b('wallet') + '/api/redbag/v2/complainAfterReceiveRedbag',//投诉建议
-        payment: b('payment')
+        payment: b('payment'),
+        rank: b('wallet') + '/api/redbag/v2/rank',
+        genSpreadDetail: b('wallet') + '/api/redbag/v2/genSpreadDetail',
+        qrCode: b('wallet') + '/api/redbag/v2/image',
+        advertise: b('wallet') + '/api/redbag/v2/advertise',
     },
     myhb: {
         tradeList: b('wallet') + '/api/account/v2/tradeList', // 我的红包

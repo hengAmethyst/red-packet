@@ -6,6 +6,85 @@
   height:100%;
   background:#f7f7f7;
 }
+/*  type选择  */
+.choose-type{
+  width:100%;
+  height:500rpx;
+  background:#f7f7f7;
+}
+.choose-type .type-title{
+  width:100%;
+  margin-top:20rpx;
+}
+.choose-type .type-title text{
+  margin-left:60rpx;
+  font-size:30rpx;
+  color: #7c7c7c;
+}
+.choose-type .type-option{
+  display:flex;
+  width:100%;
+  height:402rpx;
+  margin-top:20rpx;
+}
+.choose-type .type-option .option-1{
+  position:relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width:336rpx;
+  height:400rpx;
+  margin-left:30rpx;
+  background:#fff;
+  border-radius: 10rpx;
+}
+.choose-type .type-option .option-1 image{
+  position:absolute;
+  left:0;
+  top:0;
+  width:336rpx;
+  height:400rpx;
+}
+.choose-type .type-option .option-1 .word-1{
+  margin-top:31rpx;
+  font-weight: bold;
+  font-size:44rpx;
+  z-index:1;
+}
+.choose-type .type-option .option-1 .word-2{
+  margin-top:46rpx;
+  font-size:24rpx;
+   z-index:1;
+} 
+.choose-type .type-option .option-2{
+  position:relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width:336rpx;
+  height:400rpx;
+  margin-left:18rpx;
+  background:#fff;
+  border-radius: 10rpx;
+}
+.choose-type .type-option .option-2 image{
+  position:absolute;
+  left:0;
+  top:0;
+  width:336rpx;
+  height:400rpx;
+}
+.choose-type .type-option .option-2 .word-1{
+  margin-top:31rpx;
+  font-weight: bold;
+  font-size:44rpx;
+  z-index: 1;
+}
+.choose-type .type-option .option-2 .word-2{
+  margin-top:46rpx;
+  font-size:24rpx;
+  z-index: 1;
+}
 /*  单个红包金额  */
 .fa-hongbao .per-sum{
   margin:0 auto;
@@ -32,7 +111,7 @@
   width:140rpx;
   height:88rpx;
   font-size:30rpx;
-  text-align: end;
+  text-align: right;
 }
 .fa-hongbao .per-sum .per-sum-input text{
   margin-right:30rpx;
@@ -72,7 +151,7 @@
   display:flex;
   justify-content: space-between;
   align-items: center;
-  text-align: end;
+  text-align: right;
 }
 .fa-hongbao .hongbao-amount .hongbao-amount-input input{
   width:140rpx;
@@ -290,6 +369,14 @@
   color:#fff;
   background:#ee4126;
 }
+/*    */
+.advanced-set-word{
+  font-size:24rpx;
+  color: #b9b9b9;
+}
+.advanced-set-word text{
+  margin-left:60rpx;
+}
 /*  默认发送按钮  */
 .finish-send-btn-default{
   position:absolute;
@@ -387,6 +474,98 @@
   color: #20b6be;
   background:transparent;
   border:1rpx solid transparent;
+}
+/*  发送渠道选择  */
+.send-way{
+  position:fixed;
+  left:0;
+  bottom:0;
+  display:flex;
+  flex-direction:column;
+  align-items: center;
+  width:100%;
+  height:400rpx;
+  background:#f9f9f9;
+  z-index:3004;
+}
+.send-way .send-way-title{
+  width:100%;
+  margin-top:23rpx;
+  text-align:center;
+  font-size:30rpx;
+  color: #2b2b2b;
+}
+
+.send-way .send-way-content{
+  display:flex;
+  justify-content: space-around;
+  align-items:center;
+  width:100%;
+  height:150rpx;
+  margin-top:40rpx;
+  font-size:26rpx;
+  color: #7c7c7c;
+}
+.send-way .send-way-content image{
+  width:100rpx;
+  height:100rpx;
+}
+.send-way .send-way-content .way{
+  display:flex;
+  flex-direction:column;
+  align-items: center;
+  justify-content: space-between;
+  width:33%;
+  height:100%;
+}
+.send-way .cancel-btn{
+  position:absolute;
+  left:0;
+  bottom:0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width:100%;
+  height: 92rpx;
+  font-size:34rpx;
+  color: #333839;
+  border-top:#ccc 1rpx solid;
+}
+/*  分享给好友的按钮  */
+.share-btn{
+  position:fixed;
+  top:35%;
+  left:50%;
+  transform: translate(-50%,-50%);
+  width:522rpx;
+  height:320rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background:#fff;
+  border-radius:6rpx;
+  z-index:3004;
+}
+.share-btn .title{
+  margin-top:20rpx;
+  font-weight: bold;
+  font-size:34rpx;
+  text-align: center;
+}
+.share-btn .content{
+  margin-top:30rpx;
+  font-size:30rpx;
+  text-align: center;
+}
+.share-btn button{
+  position:absolute;
+  bottom:0;
+  left:0;
+  width:100%;
+  font-size: 36rpx;
+  color:#fff;
+  background:#ee4126;
+  border-radius:0;
 }
 
 /* 蒙版  */

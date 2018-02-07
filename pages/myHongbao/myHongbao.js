@@ -31,6 +31,7 @@ Page({
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
+        wx.showLoading({ mask: true, title: '加载中...' });
         this.setData({
             receiveCurrentPage: 1,   //第一次加载，设置1  
             receivedHbList: [],  //放置返回数据的数组,设为空  
@@ -44,11 +45,9 @@ Page({
             sentLoadingComplete: false,
             isSentList: true,
         })
-        Promise.all([this.fetchList(4), this.fetchList(3)]);
-    },
-
-    onShareAppMessage: function () {
-
+        Promise.all([this.fetchList(4), this.fetchList(3)]).then(() => {
+            wx.hideLoading();
+        });
     },
     fetchList(type) {
         return Tool.getLocation()
@@ -69,8 +68,10 @@ Page({
                         res.list.forEach(it => {
                             it.myReciveMoney = Tool.formatMoeny(it.myReciveMoney);
                             // it.expireTime = Tool.formatTime(it.expireTime, 'YYYY-MM-DD');
-                            it.distance = Tool.formatDistance(it.distance);
+                            it.distance = it.distance ? Tool.formatDistance(it.distance) : null;
+
                             let hours = (new Date(it.expireTime).getTime() - new Date().getTime()) / (1000 * 60 * 60);
+                            console.log('到期时间', hours);
                             // console.log(hours);
                             let day = Math.floor(hours / 24);
                             let hour = Math.floor(hours % 24);
@@ -79,6 +80,9 @@ Page({
                             }
                             if (hour > 0) {
                                 it.expireTime += hour + '小时';
+                            }
+                            if (hours < 24) {
+                                it.expireTime = Math.floor(hours) + '小时';
                             }
                             it.expireTime += '后到期';
                             if (day < 0 && hour < 0) {
@@ -168,11 +172,14 @@ Page({
     },
 
     handleTapDetail(e) {
-        console.log(e)
         let id = e.currentTarget.dataset.redid;
         let type = e.currentTarget.dataset.type;
+
+        let app = getApp();
         wx.navigateTo({
             url: type === "receive" ? '/pages/personHongbaoDetail/personHongbaoDetail?type=receive&id=' + id : '/pages/personHongbaoDetail/personHongbaoDetail?type=sent&id=' + id,
+            success: () => {
+            }
         })
     },
 
@@ -223,5 +230,17 @@ Page({
             wx.stopPullDownRefresh();
         });
 
+    },
+    onShow() {
+        getApp().onReady(err => {
+            if (err) {
+                wx.hideLoading();
+                console.log('登录好像出了些问题，不去拉数据了', err);
+                return;
+            }
+            if (getApp().globalData.disabled) {
+                Tool.disabledCallBack();
+            }
+        })
     }
 })

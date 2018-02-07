@@ -1,13 +1,14 @@
 <view class="card-hongbao">
     <image src="{{itemStyle.templateUrl}}" class="card-bg" mode="aspectFill"></image>
+    <image catchtap="onMusicTap" class="audio" src="{{isPlayingMusic? '/img/music-stop.png': '/img/music-start.png'}}"></image>
     <view class="card-info">
-        <!-- <view class="no-info">点击选择名片</view> -->
         <image class="info-avatar" src="{{itemStyle.logo}}"></image>
         <view class="info-content">
             <view class="info-name">{{itemStyle.name}}</view>
+            <view class="wish">"{{itemStyle.greeting}}"</view>
         </view>
     </view>
-    <view class="wish">{{itemStyle.greeting}}</view>
+
     <!-- <view class="submit-btn">确认</view> -->
     <view class="user-list">
         <block wx:for="{{userList}}" wx:key="index">
@@ -16,6 +17,9 @@
                 <view class="item-content">
                     <view class="item-nickname">{{item.name}}</view>
                     <view class="item-message">{{item.leaveWord}}</view>
+                </view>
+                <view class="item-reward" hidden="{{item.reward === 0}}">{{item.reward}}
+                    <i class="icon">赏金</i>
                 </view>
                 <view class="item-amount">{{item.amount}}元</view>
             </view>
@@ -27,7 +31,12 @@
             <image class="icon" src="/img/icon_more.png"></image>
             <text class="text">更多</text>
         </view>
-        <button class="share" open-type="share">
+        <view class="share" wx:if="{{canShare}}" catchtap="showActionSheet">
+            <view class="tip" wx:if="{{hasReward && !hasShare}}">推广赚佣金</view>
+            <image class="icon" src="/img/icon_share.png"></image>
+            <text class="text">分享</text>
+        </view>
+        <button class="share no-share" wx:else>
             <image class="icon" src="/img/icon_share.png"></image>
             <text class="text">分享</text>
         </button>
@@ -38,6 +47,44 @@
             <image class="icon" src="/img/icon_again.png"></image>
             <text class="text">再发一个</text>
         </view>
-        <view class="sent">发红包给好友</view>
+        <view class="sent" wx:if="{{canShare}}" catchtap="showActionSheet">发红包给好友</view>
+        <view class="sent" catchtap="findMoreHb" wx:else>发现更多的红包</view>
     </view>
+</view>
+
+<view class="snatch-result" catchtouchmove="true" hidden="{{!snatchVisible}}">
+    <view class="shadow"></view>
+    <view wx:if="{{snatchInfo.status == 0}}" class="result-info" animation="{{snatchAnimation}}">
+        <!-- <image class="bg" src="/img/icon_open_style_1.png"></image> -->
+        <image class="bg" src="http://img1.jinghanit.com/group1/M00/00/F5/ag8ollp1R3SAVifWAAf3iG6ptfQ512.png"></image>
+        <view class="amount-prefix">恭喜您获得</view>
+        <view class="amount-info">
+            <view class="amount">{{snatchInfo.amount}}</view>
+            <view class="amount-unit">元</view>
+        </view>
+        <view class="title">{{snatchInfo.title}}</view>
+        <button class="btn-share" open-type="share" wx:if="{{canShare}}">
+            <image class="icon-share" src="/img/icon_share.png"></image>快让朋友来领
+        </button>
+        <view class="title title-2" wx:else>人人都有红包拿</view>
+        <view class="remaining" wx:if="{{snatchInfo.remaining > 0}}">还剩{{snatchInfo.remaining}}份没人领</view>
+        <view class="remaining" wx:else>红包已经被领完</view>
+        <image class="btn-close" bindtap="handleSnatchClose" src="/img/icon_cloose_btn.png"></image>
+    </view>
+    <view wx:else class="result-info received" animation="{{snatchAnimation}}">
+        <!-- <image class="bg" src="/img/icon_open_style_2.png"></image> -->
+        <image class="bg" src="http://img1.jinghanit.com/group1/M00/00/F5/ag8ollp1R5KAXdIjAAKwfg04uDY397.png"></image>
+        <view class="message">{{snatchInfo.message}}</view>
+        <view class="title">{{snatchInfo.title}}</view>
+        <view class="remaining">还剩{{snatchInfo.remaining}}份</view>
+        <image class="btn-close" bindtap="handleSnatchClose" src="/img/icon_cloose_btn.png"></image>
+    </view>
+</view>
+
+<!-- actionSheet -->
+<view class="share-action-sheet {{showShare ? 'active' : '' }}">
+    <button class="share-btn btn share" open-type="share">分享给微信好友</button>
+    <view class="share-btn btn" wx:if="{{sharePicSwitch}}" catchtap="toQrCode">生成分享图</view>
+    <!-- <view class="share-btn btn no-tap" wx:else>生成分享图</view> -->
+    <view class="cancel-btn btn" catchtap="toCancel">取消</view>
 </view>

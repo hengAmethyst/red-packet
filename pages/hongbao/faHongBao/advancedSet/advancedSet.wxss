@@ -5,21 +5,46 @@
   height:100%;
   background:#f7f7f7;
 }
-/*  可以被搜索到  */
-.advanced-set .able-searched{
-  margin:0 auto;
-  display: flex;
-  align-content: center;
+/*  推广红包  */
+.generalize{
+  display:flex;
+  align-items: center;
   justify-content: space-between;
-  width:690rpx;
-  height:70rpx;
-  margin-top:30rpx;
+  width:100%;
+  height:134rpx;
+  background:#fff;
 }
-.advanced-set .able-searched .name{
+.generalize .generalize-word{
   display: flex;
   align-items: center;
+}
+.generalize .generalize-word :nth-child(1){
+  margin-left:60rpx;
+  font-size:30rpx;
+  color: #2b2b2b;
+}
+.generalize .generalize-word :nth-child(2){
+  font-size:24rpx;
+  color: #7c7c7c;
+}
+.generalize .switch-btn{
+  margin-right:40rpx;
+}
+/*  周围红包设置提示语  */
+.localtion-set{
+  display: flex;
+  align-items: center;
+  width:100%;
+  height:92rpx;
+}
+.localtion-set :nth-child(1){
+  margin-left:60rpx;
+  font-size:30rpx;
+  color: #2b2b2b;
+}
+.localtion-set :nth-child(2){
   margin-left:30rpx;
-  font-size:26rpx;
+  font-size:24rpx;
   color: #7c7c7c;
 }
 /*  地理位置  */
@@ -30,7 +55,6 @@
   margin:0 auto;
   width:690rpx;
   height:90rpx;
-  margin-top:30rpx;
   background:#fff;
   border-radius: 6rpx;
 }
